@@ -1,0 +1,81 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #E2F3FB, #F4F5FF);
+}
+
+/* Accent Color */
+.text-accent {
+  color: #2196F3;
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+/* Sign Up Button */
+.btn-signup {
+  height:32px;
+  width: 75px;
+  background-color: #009688;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 0;
+  transition: 0.2s;
+}
+
+.btn-signup:hover {
+  background-color: #00796b;
+  color: #fff;
+}
+
+
+.custom-row {
+  width: 1123px;
+  height: 767px;
+  margin: 0 auto; 
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+.heading .bold {
+  font-weight: 800;   /* Bold */
+}
+
+.heading .light {
+  font-weight: 100;   /* Light */
+}
+
+.heading .accent {
+  color: #05847D;
+}
+
+.subtext {
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  color: #2c2c2c;
+  line-height: 1.4;
+  margin-top: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.copy{
+  color: #6e6e6e;
+  margin-top: 80px;
+  font-size: 12px;
+}
+
