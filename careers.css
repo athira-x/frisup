@@ -78,154 +78,12 @@ body {
     margin-right: 40px;
 }
 
-.btn-learn {
-    border: 1px solid #05847D;
-    color: #FFFFFF;
-    border-radius: 30px;
-    padding: 5px 14px;
-    font-size: 13px;
-    background-color: #05847D;
-    transition: 0.3s;
-    display: inline-block;
-}
 
 .btn-signup:hover {
     background-color: #05847D;
     color: #fff;
 }
 
-.btn-learn:hover {
-    background: transparent;
-    color: #05847D;
-}
-
-
-.hero h1 {
-    font-family: "Inter", sans-serif;
-    color: #05847D;
-    font-weight: 800;
-    font-style: Bold;
-    font-size: 96px;
-    letter-spacing: 3px;
-}
-
-.hero h2 {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 40px;
-    color: rgba(5, 132, 125, 1);
-    letter-spacing: 1px;
-
-}
-
-.hero {
-    padding-left: 100px;
-    margin-top: 100px;
-}
-
-.hero-heading {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.hero-text {
-    margin-right: -40px;
-}
-
-.hero-rocket {
-    position: relative;
-    margin-left: -20px;
-}
-
-/* Rocket beside text */
-.hero-rocket img {
-    width: 240px;
-    /* bigger rocket */
-    height: auto;
-    transform: rotate(-5deg);
-}
-
-/* Buttons */
-.btn-main {
-    background: #05847D;
-    color: rgba(255, 255, 255, 1);
-    border-radius: 30px;
-    padding: 6px 22px;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 16px;
-    margin-top: 20px;
-
-}
-
-.btn-main:hover {
-    background: #eef7f9;
-    color: #05847D;
-    border: 1px solid #05847D;
-}
-
-.btn-outline-main {
-    border: 1px solid #05847D;
-    color: #05847D;
-    border-radius: 30px;
-    padding: 6px 22px;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-.btn-outline-main:hover {
-    background: #05847D;
-    color: #fff;
-}
-
-.hero-illustration {
-    max-width: 400px;
-    height: 449px;
-    margin-right: 10px;
-}
-
-.hero p {
-    font-family: Inter;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 16px;
-    width: 700px;
-    color: rgba(51, 51, 51, 1);
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-    margin: 0;
-    /* removes default spacing */
-    padding: 0;
-}
-
-.hero-description {
-    margin-top: 0px;
-    /* adjust manually for the right look */
-}
-
-/* Responsive heading size */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 36px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .hero-rocket img {
-        width: 120px;
-    }
-}
-
-/* Cards */
 .card {
     background: rgba(255, 255, 255, 1);
     border-radius: 12px;
@@ -266,28 +124,7 @@ body {
     margin-bottom: 3px;
 }
 
-/* Arrow Circle */
-.circle-icon {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(5, 132, 125, 1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 80px auto 40px;
-    /* pushed down */
-    cursor: pointer;
-}
-
-.circle-icon i {
-    color: #fff;
-    font-size: 20px;
-}
-
-/* Services Section */
-
-.services h1 {
+h1 {
     font-family: Inter;
     font-weight: 600;
     font-style: Semi Bold;
@@ -297,7 +134,7 @@ body {
 
 }
 
-.services p {
+p {
     font-family: Inter;
     font-weight: 300;
     font-style: Light;
@@ -306,7 +143,7 @@ body {
 
 }
 
-.services h2 {
+h2 {
     font-family: Inter;
     font-weight: 300;
     font-style: Light;
@@ -315,7 +152,7 @@ body {
     padding-top: 10px;
 }
 
-.services h3 {
+h3 {
     font-family: Inter;
     font-weight: 600;
     font-style: Semi Bold;
@@ -326,7 +163,7 @@ body {
 
 }
 
-.services h4 {
+h4{
     font-family: Inter;
     font-weight: 600;
     font-style: Semi Bold;
@@ -448,124 +285,9 @@ body {
     cursor: pointer;
 }
 
-.uiuxapply-btn {
-    width: 150px;
-    height: 42px;
-    display: block;
-    background-color: rgba(5, 132, 125, 1);
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    opacity: 1;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-    grid-row: 2;
-    grid-column: 2;
-    justify-self: end;
-    align-self: end;
-}
-
 .apply-btn:hover {
     border: 1px solid #05847D;
     color: #05847D;
     background-color: white;
-}
-
-#customFileLabel {
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
-    color: #05847D;
-    text-decoration: underline;
-    font-family: sans-serif;
-}
-
-
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar-nav .nav-item {
-        margin: 10px 0;
-    }
-
-    .auth-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .services h2 {
-        font-size: 22px;
-    }
-
-    .card img {
-        max-width: 60px;
-    }
-}
-
-
-/* Base styling */
-
-.job-application {
-    display: grid;
-    grid-template-columns: lfr auto;
-    grid-template-rows: lfr auto;
-    max-width: 1088px;
-    height: auto;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 30px;
-    margin-bottom: 100px;
-}
-
-.job-application h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.job-application p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-form fieldset {
-    border: none;
-    margin-bottom: 20px;
-}
-
-form ul {
-    list-style: disc inside;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin: 15px 0 5px;
-    font-weight: 500;
-}
-
-input[type="file"],
-input[type="checkbox"] {
-    margin-top: 5px;
-}
-
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-    .job-application {
-        padding: 20px;
-    }
-
-    .job-application h2 {
-        font-size: 24px;
-    }
-
-    .apply-btn {
-        width: 100%;
-        text-align: center;
-    }
 }
 

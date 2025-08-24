@@ -1,8 +1,8 @@
-#hiddenContent{
+#hiddenContent {
     display: none;
 }
 
-#hiddenContent.show{
+#hiddenContent.show {
     display: block;
 }
 
@@ -328,4 +328,49 @@ h5 {
 .card .role {
     font-size: 0.9rem;
     color: #555;
+}
+
+
+/* Center the whole carousel block */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    /* centers inline elements inside */
+}
+
+/* Make the row of cards shrink to its content and sit centered */
+.carousel {
+    display: inline-flex;
+    /* shrink-wrap to cards */
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    /* override any width:100% */
+    margin: 0 auto;
+    /* safety */
+}
+
+/* Keep arrows on the left/right edges of the container */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel-btn.left {
+    left: 300px;
+}
+
+.carousel-btn.right {
+    right: 200px;
+}
+
+/* Ensure dots line stays centered */
+.carousel-container .dots {
+    display: inline-block;
+    margin-top: 12px;
 }

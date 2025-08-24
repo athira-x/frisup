@@ -1,0 +1,194 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%) !important;
+    color: #1b1b1b;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+/* Logo */
+.logo-img {
+    width: 171px;
+    height: 121px;
+}
+
+/* Navbar */
+.navbar {
+    background: transparent;
+}
+
+.nav-link {
+    font-family: "Inter";
+    position: relative;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgba(51, 51, 51, 1);
+    font-weight: 400px;
+    margin-top: 40px;
+}
+
+.nav-link i {
+    color: #05847D;
+    height: 22px;
+    width: 22px;
+    font-weight: bold;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #05847D;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #05847D !important;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 18px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    color: rgba(51, 51, 51, 1);
+    gap: 20px;
+}
+
+/* Buttons */
+.btn-signup {
+    border: 1px solid #05847D;
+    color: #05847D;
+    border-radius: 30px;
+    padding: 5px 14px;
+    font-size: 13px;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+.btn-signup:hover {
+    background-color: #05847D;
+    color: #fff;
+}
+
+.btn-learn:hover {
+    background: transparent;
+    color: #05847D;
+}
+
+
+.services h1 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: rgba(85, 85, 85, 1);
+    padding-top: 50px;
+
+}
+
+.services p {
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 14px;
+    color: rgba(85, 85, 85, 1);
+
+}
+
+.services h2 {
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 16px;
+    color: rgba(85, 85, 85, 1);
+    padding-top: 10px;
+}
+
+.services h3 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: rgba(5, 132, 125, 0.67);
+    margin-bottom: 10px;
+    padding-top: 50px;
+
+}
+
+.services h4 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: rgba(5, 132, 125, 0.67);
+}
+
+.btn-learn {
+    border: 1px solid #05847D;
+    color: #FFFFFF;
+    border-radius: 30px;
+    padding: 5px 14px;
+    font-size: 13px;
+    background-color: #05847D;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-signup:hover {
+    background-color: #05847D;
+    color: #fff;
+}
+
+.btn-learn:hover {
+    background: transparent;
+    color: #05847D;
+}
+
+.underline {
+    width: 124px;
+    height: 1px;
+    background-color: #05847D;
+    margin: 3px auto 0;
+    margin-top: 30px;
+}
+
+.big_underline {
+    width: 927px;
+    height: 1px;
+    background-color: #05847D;
+    border-radius: 10px;
+    margin: 14px auto 0;
+    margin-bottom: 3px;
+}
+
+.circle-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(5, 132, 125, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px auto 40px;
+    /* pushed down */
+    cursor: pointer;
+}
+
+.circle-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
