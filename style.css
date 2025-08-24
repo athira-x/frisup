@@ -1,0 +1,567 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%) !important;
+    color: #1b1b1b;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+/* Logo */
+.logo-img {
+    width: 171px;
+    height: 121px;
+}
+
+/* Navbar */
+.navbar {
+    background: transparent;
+}
+
+.nav-link {
+    font-family: "Inter";
+    position: relative;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgba(51, 51, 51, 1);
+    font-weight: 400px;
+    margin-top: 40px;
+}
+
+.nav-link i {
+    color: #05847D;
+    height: 22px;
+    width: 22px;
+    font-weight: bold;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #05847D;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #05847D !important;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 18px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    color: rgba(51, 51, 51, 1);
+    gap: 20px;
+}
+
+/* Buttons */
+.btn-signup {
+    border: 1px solid #05847D;
+    color: #05847D;
+    border-radius: 30px;
+    padding: 5px 14px;
+    font-size: 13px;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+.btn-learn {
+    border: 1px solid #05847D;
+    color: #FFFFFF;
+    border-radius: 30px;
+    padding: 5px 14px;
+    font-size: 13px;
+    background-color: #05847D;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-signup:hover {
+    background-color: #05847D;
+    color: #fff;
+}
+
+.btn-learn:hover {
+    background: transparent;
+    color: #05847D;
+}
+
+
+.hero h1 {
+    font-family: "Inter", sans-serif;
+    color: #05847D;
+    font-weight: 800;
+    font-style: Bold;
+    font-size: 96px;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    color: rgba(5, 132, 125, 1);
+    letter-spacing: 1px;
+
+}
+
+.hero {
+    padding-left: 100px;
+    margin-top: 100px;
+}
+
+.hero-heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    margin-right: -40px;
+}
+
+.hero-rocket {
+    position: relative;
+    margin-left: -20px;
+}
+
+/* Rocket beside text */
+.hero-rocket img {
+    width: 240px;
+    /* bigger rocket */
+    height: auto;
+    transform: rotate(-5deg);
+}
+
+/* Buttons */
+.btn-main {
+    background: #05847D;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    padding: 6px 22px;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    margin-top: 20px;
+
+}
+
+.btn-main:hover {
+    background: #05847D;
+}
+
+.btn-outline-main {
+    border: 1px solid #05847D;
+    color: #05847D;
+    border-radius: 30px;
+    padding: 6px 22px;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.btn-outline-main:hover {
+    background: #05847D;
+    color: #fff;
+}
+
+.hero-illustration {
+    max-width: 400px;
+    height: 449px;
+    margin-right: 10px;
+}
+
+.hero p {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    width: 700px;
+    color: rgba(51, 51, 51, 1);
+}
+
+.hero-text h1,
+.hero-text h2,
+.hero-text p {
+    margin: 0;
+    /* removes default spacing */
+    padding: 0;
+}
+
+.hero-description {
+    margin-top: 0px;
+    /* adjust manually for the right look */
+}
+
+/* Responsive heading size */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-rocket img {
+        width: 120px;
+    }
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12px;
+    border: none;
+    width: 254px;
+    height: 321px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.card p {
+    margin-top: auto;
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.underline {
+    width: 124px;
+    height: 1px;
+    background-color: #05847D;
+    margin: 3px auto 0;
+    margin-top: 30px;
+}
+
+.big_underline {
+    width: 927px;
+    height: 1px;
+    background-color: #05847D;
+    border-radius: 10px;
+    margin: 14px auto 0;
+    margin-bottom: 3px;
+}
+
+/* Arrow Circle */
+.circle-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(5, 132, 125, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px auto 40px;
+    /* pushed down */
+    cursor: pointer;
+}
+
+.circle-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Services Section */
+
+.services h1 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: rgba(85, 85, 85, 1);
+    padding-top: 50px;
+
+}
+
+.services p {
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 14px;
+    color: rgba(85, 85, 85, 1);
+
+}
+
+.services h2 {
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 16px;
+    color: rgba(85, 85, 85, 1);
+    padding-top: 10px;
+}
+
+.services h3 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: rgba(5, 132, 125, 0.67);
+    margin-bottom: 10px;
+    padding-top: 50px;
+
+}
+
+.services h4 {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 24px;
+    color: rgba(5, 132, 125, 0.67);
+}
+
+.outer-card {
+    position: relative;
+    width: 220px;
+    height: 258px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 8px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.inner-card {
+    width: 206px;
+    height: 202px;
+    border-radius: 5px;
+    background: rgba(226, 243, 251, 1);
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.positions {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 11px;
+    color: rgba(5, 132, 125, 0.67);
+}
+
+.save-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 16px;
+    color: rgba(5, 132, 125, 1);
+}
+
+.pages-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+.title-wrapper {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.title-text {
+    display: inline-block;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+}
+
+.dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.dot.active {
+    background-color: rgba(5, 132, 125, 1);
+}
+
+.apply-btn {
+    position:absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: rgba(5, 132, 125, 1);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.uiuxapply-btn {
+    width: 150px;
+    height: 42px;
+    display: block;
+    background-color: rgba(5, 132, 125, 1);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    opacity: 1;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: end;
+    align-self: end;
+}
+
+.apply-btn:hover {
+    border: 1px solid #05847D;
+    color: #05847D;
+    background-color: white;
+}
+
+#customFileLabel {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    color: #05847D;
+    text-decoration: underline;
+    font-family: sans-serif;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .services h2 {
+        font-size: 22px;
+    }
+
+    .card img {
+        max-width: 60px;
+    }
+}
+
+
+/* Base styling */
+
+.job-application {
+    display: grid;
+    grid-template-columns: lfr auto;
+    grid-template-rows: lfr auto;
+    max-width: 1088px;
+    height: auto;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 100px;
+}
+
+.job-application h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.job-application p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+form ul {
+    list-style: disc inside;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 500;
+}
+
+input[type="file"],
+input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .job-application {
+        padding: 20px;
+    }
+
+    .job-application h2 {
+        font-size: 24px;
+    }
+
+    .apply-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

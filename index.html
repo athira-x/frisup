@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Frisup</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="FrisUp Logo" class="logo-img">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 py-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
+        </ul>
+
+        <div class="auth-buttons">
+          <a class="nav-link" href="#">Log in</a>
+          <a class="btn btn-signup" href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container-fluid px-3 px-md-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-md-6">
+          <div class="hero-heading d-flex flex-column flex-md-row align-items-center">
+            <div class="hero-text">
+              <h1 class="hero-title"><span class="text-green">FRISUP</span></h1>
+              <h2 class="hero-subtitle">FRESH RISE UP</h2>
+            </div>
+            <div class="hero-rocket ms-md-3 mt-3 mt-md-0">
+              <img src="images/rocket.png" class="img-fluid" alt="rocket">
+            </div>
+          </div>
+
+          <p class="mt-4">
+            We provide IT solutions and business support in Marketing, Design, Technology, and Finance.
+            Our team delivers end-to-end services tailored<br> to client needs.
+            From strategy to execution, we help businesses grow with reliable solutions.
+          </p>
+
+          <div class="d-flex flex-column flex-sm-row gap-3 mt-3">
+            <a href="learn_more.html" class="btn btn-main">Learn more</a>
+            <a href="#" class="btn btn-outline-main">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center text-md-end">
+          <img src="images/bg_illustration.svg" alt="Illustration" class="img-fluid hero-illustration">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
