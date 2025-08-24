@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers - Frisup</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg py-2">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="FrisUp Logo" class="logo-img" />
+    </a>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 py-2">
+          <li class="nav-item"><a class="nav-link text-muted" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-muted" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-muted" href="careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link text-muted" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link text-muted" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a class="nav-link" href="login.html">Log in</a>
+          <a class="btn btn-signup" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center ">
+    <h1 class="h2 text-muted pt-0 mt-0" style="margin-top: 188px;">About Us</h1>
+    <h2 class="text-muted text-center">We are an IT solutions company empowering businesses with services in Tech,
+      Design,
+      Marketing, and Finance.<br>Our mission is to deliver smart, reliable, and growth-focused solutions for clients
+      worldwide.</h2>
+    <h3 class="mt-5">The Minds At Frisup</h3>
+
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <button class="carousel-btn left">&#10094;</button>
+    <div class="carousel" id="carousel">
+      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/11.jpg" />
+        <div class="name">Jane Cooper</div>
+        <div class="role">Developer</div>
+      </div>
+      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/12.jpg" />
+        <div class="name">Alex Smith</div>
+        <div class="role">Designer</div>
+      </div>
+      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/13.jpg" />
+        <div class="name">Sam Brown</div>
+        <div class="role">Engineer</div>
+      </div>
+      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/14.jpg" />
+        <div class="name">Tom Hardy</div>
+        <div class="role">Manager</div>
+      </div>
+      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/15.jpg" />
+        <div class="name">Mike Lee</div>
+        <div class="role">Analyst</div>
+      </div>
+      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+        <div class="name">John Wayne</div>
+        <div class="role">Lead</div>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <button class="carousel-btn right">&#10095;</button>
+  </div>
+
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-4">
+        <h4 class="text-center">30+</h4>
+        <h5 class="text-center">30+ Skilled professionals</h5>
+      </div>
+      <div class="col-4">
+        <h4 class="text-center">10+</h4>
+        <h5 class="text-center">10+ Successful Deliveries</h5>
+      </div>
+      <div class="col-4">
+        <h4 class="text-center">20+</h4>
+        <h5 class="text-center">20+ Global Customers</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-5 mb-4">
+      <div class="col-12 text-center">
+        <button id="learnMoreBtn" class="btn btn-main">Learn more</button>
+        <div id="downArrow" class="down-arrow mt-4"><img src=images/arrow.png></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="hiddenContent">
+    <section class="py-3">
+      <div class="container">
+        <h1 class="h2 text-muted pt-0 mt-0 mb-5 text-center">The Minds at frisup </h1>
+        <h1 class="h5 text-muted pt-0 mt-0 mb-5 ">Developers</h1>
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+          </div>
+
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+
+          </div>
+
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+    <section class="py-3">
+      <div class="container">
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    <section class="py-3">
+      <div class="container">
+        <h1 class="h5 text-muted pt-0 mt-0 mb-5 ">Developers</h1>
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+          </div>
+
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+
+          </div>
+
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+    <section class="py-3">
+      <div class="container">
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="py-3">
+      <div class="container">
+        <h1 class="h5 text-muted pt-0 mt-0 mb-5 ">Developers</h1>
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+          </div>
+
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+
+          </div>
+
+          <div style="flex: 0 0 20%;">
+
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+
+
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+    <section class="py-3">
+      <div class="container">
+        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+
+          <div style="flex: 0 0 20%;">
+            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
+              <div class="name">John Wayne</div>
+              <div class="role">Lead</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    <div class="container my-5">
+      <h1 class="text-muted ms-5 mt-5 ">30+ Skilled professionals</h1>
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <p class="text-muted ms-5">At Frisup IT Solutions, we understand the importance of design and marketing in the
+            digital world. Our creative professionals craft visually engaging interfaces and impactful marketing
+            campaigns
+            that connect with audiences. By combining design expertise with data-driven marketing, we help brands gain
+            visibility and credibility. We also provide financial IT solutions that assist businesses in making informed
+            decisions. Our services are tailored to meet the specific needs of each client.</p>
+        </div>
+        <div class="col-md-5 text-center">
+          <h4 class="text-center">30+</h4>
+          <h5 class="text-center">30+ Skilled professionals</h5>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <div class="col-md-5 text-center">
+          <h4 class="text-center">10+</h4>
+          <h5 class="text-center">10+ Successful Deliveries</h5>
+        </div>
+        <div class="col-md-7">
+          <h1 class="text-muted ms-5 mt-5 ">10+ Successful Deliveries</h1>
+          <p class="text-muted ms-5">Delivering projects with excellence is our top priority. So far, Frisup IT
+            Solutions
+            has successfully completed 10+ projects across different industries. Each delivery reflects our commitment
+            to
+            quality, efficiency, and client satisfaction. From startups to established enterprises, we’ve built scalable
+            applications, modern websites, and effective marketing campaigns. Every project is handled with a structured
+            process, from ideation to execution, ensuring zero compromise on quality. We believe success isn’t just
+            about
+            finishing a project—it's about creating value for our clients. Our timely deliveries and reliable support
+            help
+            businesses achieve measurable growth. These successful deliveries stand as proof of our capabilities and
+            dedication.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <h1 class="text-muted ms-5 mt-5 ">20+ Global Customers</h1>
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <p class="text-muted ms-5">The vision of Frisup IT Solutions is to create a platform where both
+            companies and individuals can thrive. We offer opportunities for freshers to learn, grow, and
+            contribute through real-world projects. Our culture encourages innovation, collaboration, and
+            continuous learning. Over the years, we aim to expand our services globally and support clients
+            across industries. With dedication and smart strategies, Frisup is building a strong community of
+            talent and business success.</p>
+        </div>
+        <div class="col-md-5 text-center">
+          <h4 class="text-center">20+</h4>
+          <h5 class="text-center">20+ Global Customers</h5>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- JS -->
+  <script>
+    const carouselCards = document.querySelectorAll('.carousel-card');
+    const dots = document.querySelectorAll('.dot');
+    const leftBtn = document.querySelector('.carousel-btn.left');
+    const rightBtn = document.querySelector('.carousel-btn.right');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      carouselCards.forEach(card => card.classList.remove('pos0', 'pos1', 'pos2', 'pos3', 'pos4'));
+      const total = carouselCards.length;
+
+      for (let i = 0; i < 5; i++) {
+        const idx = (currentIndex + i) % total;
+        carouselCards[idx].classList.add('pos' + i);
+      }
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex % dots.length].classList.add('active');
+    }
+
+    rightBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % carouselCards.length;
+      updateCarousel();
+    });
+
+    leftBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + carouselCards.length) % carouselCards.length;
+      updateCarousel();
+    });
+
+    updateCarousel();
+
+    function revealContent() {
+      const hidden = document.getElementById("hiddenContent");
+      hidden.classList.add("show");
+      hidden.scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("downArrow").addEventListener("click",revealContent);
+    document.getElementById("learnMoreBtn").addEventListener("click",revealContent);
+  </script>
+</body>
+
+</html>

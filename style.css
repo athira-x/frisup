@@ -161,7 +161,9 @@ body {
 }
 
 .btn-main:hover {
-    background: #05847D;
+    background: #eef7f9;
+    color: #05847D;
+    border: 1px solid #05847D;
 }
 
 .btn-outline-main {
@@ -434,7 +436,7 @@ body {
 }
 
 .apply-btn {
-    position:absolute;
+    position: absolute;
     bottom: 12px;
     right: 12px;
     background-color: rgba(5, 132, 125, 1);
@@ -478,6 +480,7 @@ body {
     text-decoration: underline;
     font-family: sans-serif;
 }
+
 
 
 /* Responsive */
@@ -565,3 +568,4 @@ input[type="checkbox"] {
         text-align: center;
     }
 }
+
