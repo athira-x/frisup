@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #eef7f9;
+    background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%);
     color: #1b1b1b;
     min-height: 100vh;
     margin: 0;
