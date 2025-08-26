@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%);
+    background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%) !important;
     color: #1b1b1b;
     min-height: 100vh;
     margin: 0;
@@ -71,6 +71,8 @@ h5 {
 
 }
 
+
+
 .logo-img {
     width: 171px;
     height: 121px;
@@ -86,7 +88,7 @@ h5 {
     font-size: 16px;
     text-decoration: none;
     color: rgba(51, 51, 51, 1);
-    font-weight: 400;
+    font-weight: 400px;
     margin-top: 40px;
 }
 
@@ -125,24 +127,27 @@ h5 {
     display: flex;
     align-items: center;
     color: rgba(51, 51, 51, 1);
-    gap: 20px;
+    gap: 30px;
+    margin-left: auto;
 }
 
+/* Buttons */
 .btn-signup {
     border: 1px solid #05847D;
     color: #05847D;
     border-radius: 30px;
-    padding: 5px 14px;
+    padding: 8px 20px;
     font-size: 13px;
     transition: 0.3s;
     margin-top: 40px;
-    margin-right: 40px;
+    margin-right: 0px;
 }
 
 .btn-signup:hover {
     background-color: #05847D;
     color: #fff;
 }
+
 
 .carousel-container {
     position: relative;
@@ -373,4 +378,217 @@ h5 {
 .carousel-container .dots {
     display: inline-block;
     margin-top: 12px;
+}
+
+
+@media (max-width: 992px) {
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel-card,
+    .card {
+        width: 180px;
+        height: 220px;
+    }
+
+    .carousel-btn.left {
+        left: 20px;
+    }
+
+    .carousel-btn.right {
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .carousel-card,
+    .card {
+        width: 150px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-btn.left {
+        left: 10px;
+    }
+
+    .carousel-btn.right {
+        right: 10px;
+    }
+}
+
+/* ---------------------------- */
+/* Mobile & Tablet Navbar Only  */
+/* ---------------------------- */
+
+/* Tablets (≤ 991px) */
+@media (max-width: 991px) {
+  /* Overlay menu */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background-color: rgba(5, 132, 125, 0.95);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 9999;
+  }
+
+  /* Show menu when collapsed */
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+
+  /* Close button inside menu */
+  .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* Blur background when menu open */
+  body.menu-open .hero,
+  body.menu-open main,
+  body.menu-open footer {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+
+  /* Mobile nav links color & spacing */
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* Mobile logout button */
+  .mobile-logout {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .mobile-logout .btn {
+    background-color: #E2F3FB;
+    color: rgb(243, 10, 10) !important;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+/* Mobiles (≤ 576px) */
+@media (max-width: 576px) {
+  /* Navbar adjustments */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .navbar-toggler {
+    margin-left: 10px;
+    order: -1; /* move toggler to left */
+    border: none;
+    padding: 2px 6px; /* smaller toggler */
+  }
+
+  /* Custom toggler lines */
+  .navbar-toggler-icon {
+    background-image: none;
+    width: 20px;
+    height: 2px;
+    background-color: #05847D;
+    display: block;
+    position: relative;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #05847D;
+    left: 0;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -7px;
+  }
+
+  .navbar-toggler-icon::after {
+    top: 7px;
+  }
+
+  /* Mobile profile circle */
+  .mobile-profile {
+    position: absolute;
+    top: 29px;
+    right: 18px;
+    text-align: center;
+  }
+
+  .profile-circle {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: #05847D;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 auto;
+  }
+
+  .profile-name {
+    font-size: 12px;
+    color: #000;
+  }
+
+  .login-text {
+    color: #05847D;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
 }

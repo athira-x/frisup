@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,40 +20,70 @@
 </head>
 
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg py-2">
-    <a class="navbar-brand" href="index.html">
-      <img src="images/logo.png" alt="FrisUp Logo" class="logo-img">
-    </a>
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <!-- Left Side: Toggler + Logo -->
+      <div class="d-flex align-items-center">
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!-- Logo -->
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.png" alt="FrisUp Logo" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Right Side Menu -->
       <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- Close button for mobile menu -->
+        <button class="close-menu d-lg-none">&times;</button>
+
         <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 py-2">
-          <li class="nav-item"><a class="nav-link text-muted" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-muted" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-muted" href="careers.html">Careers</a></li>
-          <li class="nav-item"><a class="nav-link text-muted" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link text-muted" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
         </ul>
 
-        <div class="auth-buttons">
+        <!-- Desktop only login/signup -->
+        <div class="auth-buttons d-none d-lg-flex">
           <a class="nav-link" href="login.html">Log in</a>
           <a class="btn btn-signup" href="signup.html">Sign Up</a>
+        </div>
+
+        <!-- Mobile only logout -->
+        <div class="mobile-logout d-lg-none mt-auto">
+          <a class="btn w-100 text-white border-0" href="logout.html">Logout</a>
         </div>
       </div>
     </div>
   </nav>
 
+    <!-- Mobile Profile -->
+  <div class="mobile-profile d-flex align-items-center d-lg-none">
+    <!-- Not logged in -->
+    <a href="login.html" class="login-text">Login</a>
+
+    <!-- Logged in -->
+    <div class="profile-user d-none">
+      <div class="profile-circle" id="profile-circle">V</div>
+      <div class="profile-name" id="profile-name">Vasu</div>
+    </div>
+  </div>
+
   <!-- Services Section -->
   <section class="services py-3">
     <div class="container text-center ">
       <h1 class="h2 text-muted pt-0 mt-0" style="margin-top: 188px;">WHAT WE DO</h1>
-      <h2 class="text-muted">We deliver IT solutions in Marketing, Design, Tech, and Finance.<br>
+      <h2>We deliver IT solutions in Marketing, Design, Tech, and Finance.<br>
         Our services help businesses grow with smart, reliable strategies.</h2>
       <div class="underline"></div>
 
@@ -113,6 +144,44 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+    // Navbar collapse & close button logic
+    const navCollapse = document.getElementById('navbarNav');
+    const closeBtn = document.querySelector('.close-menu');
+
+    closeBtn.addEventListener('click', () => {
+      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+      bsCollapse.hide();
+    });
+
+    // Body blur when menu is open
+    navCollapse.addEventListener('show.bs.collapse', () => {
+      document.body.classList.add('menu-open');
+    });
+
+    navCollapse.addEventListener('hidden.bs.collapse', () => {
+      document.body.classList.remove('menu-open');
+    });
+
+    // Mobile/desktop profile logic
+    const userLoggedIn = true; // toggle true/false to simulate login
+    const userName = "Vasu";
+
+    const loginText = document.querySelector(".login-text");
+    const profileCircle = document.querySelector("#profile-circle");
+    const profileName = document.querySelector("#profile-name");
+    const profileUserDiv = document.querySelector(".profile-user");
+
+    if (userLoggedIn) {
+      loginText.style.display = "none"; // hide login text
+      profileUserDiv.classList.remove("d-none");
+      profileCircle.textContent = userName.charAt(0).toUpperCase();
+      profileName.textContent = userName;
+    } else {
+      loginText.style.display = "block";
+      profileUserDiv.classList.add("d-none");
+    }
+  </script>
 </body>
 
 </html>

@@ -108,3 +108,8 @@ label {
   font-size: 12px;
 }
 
+/* Checkbox tick color */
+.form-check-input:checked {
+  background-color: #00796b;
+  border-color: #00796b;
+}
