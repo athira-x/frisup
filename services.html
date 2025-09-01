@@ -15,13 +15,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Loader logic -->
+  <script src="loader.js"></script>
+
+  <!-- Lottie player script -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="services.css">
 </head>
 
 <body>
 
-  <!-- Navbar -->
+  <!-- ===================== Navbar ===================== -->
   <nav class="navbar navbar-expand-lg py-2">
     <div class="container d-flex align-items-center justify-content-between">
 
@@ -41,22 +47,29 @@
       <!-- Right Side Menu -->
       <div class="collapse navbar-collapse" id="navbarNav">
 
-        <!-- Close button for mobile menu -->
+        <!-- Close button (mobile only) -->
         <button class="close-menu d-lg-none">&times;</button>
 
+        <!-- Navigation Links -->
         <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 py-2">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
         </ul>
 
-        <!-- Desktop only login/signup -->
-        <div class="auth-buttons d-none d-lg-flex">
-          <a class="nav-link" href="login.html">Log in</a>
-          <a class="btn btn-signup" href="signup.html">Sign Up</a>
+        <!-- Desktop only auth buttons -->
+        <div class="auth-buttons d-none d-lg-flex align-items-center gap-3" id="auth-buttons">
+          <!-- Before login -->
+          <a class="nav-link login-btn" href="login.html">Log in</a>
+          <a class="btn btn-signup signup-btn" href="signup.html">Sign Up</a>
+
+          <!-- After login -->
+          <div class="profile-user d-none align-items-center gap-2" id="desktop-profile">
+            <div class="profile-circle" id="desktop-profile-circle">V</div>
+            <div class="profile-name" id="desktop-profile-name">Vasu</div>
+          </div>
         </div>
 
         <!-- Mobile only logout -->
@@ -67,85 +80,156 @@
     </div>
   </nav>
 
-    <!-- Mobile Profile -->
-  <div class="mobile-profile d-flex align-items-center d-lg-none">
-    <!-- Not logged in -->
+  <!-- ===================== Mobile Profile ===================== -->
+  <div class="mobile-profile d-lg-none position-absolute top-0 end-0 p-2">
+    <!-- Before login -->
     <a href="login.html" class="login-text">Login</a>
 
-    <!-- Logged in -->
-    <div class="profile-user d-none">
+    <!-- After login -->
+    <div class="profile-user d-none align-items-center gap-2" id="mobile-profile">
       <div class="profile-circle" id="profile-circle">V</div>
       <div class="profile-name" id="profile-name">Vasu</div>
     </div>
   </div>
 
-  <!-- Services Section -->
+  <!-- ===================== Services Section ===================== -->
   <section class="services py-3">
-    <div class="container text-center ">
-      <h1 class="h2 text-muted pt-0 mt-0" style="margin-top: 188px;">WHAT WE DO</h1>
-      <h2>We deliver IT solutions in Marketing, Design, Tech, and Finance.<br>
-        Our services help businesses grow with smart, reliable strategies.</h2>
+    <div class="container text-center">
+      <h1 class="h2 text-muted pt-0 mt-0">WHAT WE DO</h1>
+      <h2>
+        We deliver IT solutions in Marketing, Design, Tech, and Finance.<br>
+        Our services help businesses grow with smart, reliable strategies.
+      </h2>
       <div class="underline"></div>
 
+      <!-- Service Cards -->
       <div class="row mt-5">
+        <!-- Tech -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <h3 class="h5">Tech</h3>
-          <div class="card p-3 mx-3 d-flex align-items-center justify-content-center text-center">
-            <img src="images/tech.png" class="mb-2 h-90 w-auto">
-            <p class="text-center">We build custom software, web, and mobile applications.<br>Our solutions are
-              secure, scalable, and future-ready.</p>
-            <a class="btn btn-learn mt-auto" href="tech.html">Learn more</a>
+          <div class="card p-3 mx-3 d-flex align-items-center text-center">
+            <img src="images/tech.png" class="mb-2 service-img">
+            <p>We build custom software, web, and mobile applications.<br>Our solutions are secure, scalable, and future-ready.</p>
+            <a class="btn btn-learn mt-auto with-loader" href="./tech.html">Learn more</a>
           </div>
         </div>
 
+        <!-- Design -->
         <div class="col-md-3">
           <h3 class="h5">Design</h3>
-          <div class="card p-3 mx-3 d-flex align-items-center justify-content-center text-center">
-            <img src="images/design.png" class="mb-2 h-90 w-auto">
-            <p>We create modern UI/UX and brand identities.<br>Our designs blend creativity with
-              user-focused experience.</p>
-            <a class="btn btn-learn mt-auto" href="#">Learn more</a>
+          <div class="card p-3 mx-3 d-flex align-items-center text-center">
+            <img src="images/design.png" class="mb-2 service-img">
+            <p>We create modern UI/UX and brand identities.<br>Our designs blend creativity with user-focused experience.</p>
+            <a class="btn btn-learn mt-auto with-loader" href="./design.html">Learn more</a>
           </div>
         </div>
 
+        <!-- Marketing -->
         <div class="col-md-3">
           <h3 class="h5">Marketing</h3>
-          <div class="card p-3 mx-3 d-flex align-items-center justify-content-center text-center">
-            <img src="images/marketing.png" class="mb-2 h-90 w-auto">
-            <p>We offer digital marketing, SEO, and social media campaigns.<br>Our strategies boost
-              visibility and drive customer growth.</p>
-            <a class="btn btn-learn mt-auto" href="#">Learn more</a>
+          <div class="card p-3 mx-3 d-flex align-items-center text-center">
+            <img src="images/marketing.png" class="mb-2 service-img">
+            <p>We offer digital marketing, SEO, and social media campaigns.<br>Our strategies boost visibility and drive customer growth.</p>
+            <a class="btn btn-learn mt-auto with-loader" href="./market.html">Learn more</a>
           </div>
         </div>
 
+        <!-- Finance -->
         <div class="col-md-3">
           <h3 class="h5">Finance</h3>
-          <div class="card p-3 mx-3 d-flex align-items-center justify-content-center text-center">
-            <img src="images/finance.png" class="mb-2 h-90 w-auto">
-            <p>We provide IT-enabled financial planning and analytics.<br>Our tools help businesses
-              manage resources smarter.</p>
-            <a class="btn btn-learn mt-auto" href="#">Learn more</a>
+          <div class="card p-3 mx-3 d-flex align-items-center text-center">
+            <img src="images/finance.png" class="mb-2 service-img">
+            <p>We provide IT-enabled financial planning and analytics.<br>Our tools help businesses manage resources smarter.</p>
+            <a class="btn btn-learn mt-auto with-loader" href="./finance.html">Learn more</a>
           </div>
         </div>
       </div>
 
-      <!-- Arrow moved down -->
+      <!-- Arrow Down -->
       <div class="circle-icon">
         <i class="bi bi-arrow-down"></i>
       </div>
 
-      <h2 class="text-muted mt-5">Our services cover every stage of business growth.<br>
+      <h2 class="text-muted mt-5">
+        Our services cover every stage of business growth.<br>
         From tech solutions to design, marketing, and finance support, we deliver end-to-end value.<br>
         Partner with us to build, promote, and scale your business efficiently.
       </h2>
-      <div class="big_underline"></div>
+      <div class="big-underline"></div>
     </div>
   </section>
 
-  <!-- Bootstrap JS -->
+  <!-- ===================== Scripts ===================== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-   <script>
-    // Navbar collapse & close button logic
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
+      authDomain: "frisup-d4f6b.firebaseapp.com",
+      projectId: "frisup-d4f6b",
+      storageBucket: "frisup-d4f6b.firebasestorage.app",
+      messagingSenderId: "422380993738",
+      appId: "1:422380993738:web:0fbe35f5926216489a4833"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Elements
+    const loginText = document.querySelector(".login-text");
+    const mobileProfileDiv = document.querySelector("#mobile-profile");
+    const profileCircle = document.querySelector("#profile-circle");
+    const profileName = document.querySelector("#profile-name");
+
+    const loginBtn = document.querySelector(".login-btn");
+    const signupBtn = document.querySelector(".signup-btn");
+    const desktopProfileDiv = document.querySelector("#desktop-profile");
+    const desktopProfileCircle = document.querySelector("#desktop-profile-circle");
+    const desktopProfileName = document.querySelector("#desktop-profile-name");
+
+    // Auth State
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        loginBtn.style.display = "none";
+        signupBtn.style.display = "none";
+        desktopProfileDiv.classList.remove("d-none");
+
+        loginText.style.display = "none";
+        mobileProfileDiv.classList.remove("d-none");
+
+        // Get Firestore data
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          const fullName = userData.firstName || "User";
+
+          // Desktop
+          desktopProfileCircle.textContent = fullName.charAt(0).toUpperCase();
+          desktopProfileName.textContent = fullName;
+
+          // Mobile
+          profileCircle.textContent = fullName.charAt(0).toUpperCase();
+          profileName.textContent = fullName;
+        }
+      } else {
+        loginBtn.style.display = "block";
+        signupBtn.style.display = "block";
+        desktopProfileDiv.classList.add("d-none");
+
+        loginText.style.display = "block";
+        mobileProfileDiv.classList.add("d-none");
+      }
+    });
+
+    // Navbar collapse close button
     const navCollapse = document.getElementById('navbarNav');
     const closeBtn = document.querySelector('.close-menu');
 
@@ -154,34 +238,12 @@
       bsCollapse.hide();
     });
 
-    // Body blur when menu is open
     navCollapse.addEventListener('show.bs.collapse', () => {
       document.body.classList.add('menu-open');
     });
-
     navCollapse.addEventListener('hidden.bs.collapse', () => {
       document.body.classList.remove('menu-open');
     });
-
-    // Mobile/desktop profile logic
-    const userLoggedIn = true; // toggle true/false to simulate login
-    const userName = "Vasu";
-
-    const loginText = document.querySelector(".login-text");
-    const profileCircle = document.querySelector("#profile-circle");
-    const profileName = document.querySelector("#profile-name");
-    const profileUserDiv = document.querySelector(".profile-user");
-
-    if (userLoggedIn) {
-      loginText.style.display = "none"; // hide login text
-      profileUserDiv.classList.remove("d-none");
-      profileCircle.textContent = userName.charAt(0).toUpperCase();
-      profileName.textContent = userName;
-    } else {
-      loginText.style.display = "block";
-      profileUserDiv.classList.add("d-none");
-    }
   </script>
 </body>
-
 </html>

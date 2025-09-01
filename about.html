@@ -15,6 +15,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
+  <!-- Loader logic -->
+  <script src="loader.js"></script>
+
+  <!-- Lottie player script -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="about.css" />
 </head>
@@ -50,13 +56,19 @@
           <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
         </ul>
 
-        <!-- Desktop only login/signup -->
-        <div class="auth-buttons d-none d-lg-flex">
-          <a class="nav-link" href="login.html">Log in</a>
-          <a class="btn btn-signup" href="signup.html">Sign Up</a>
+        <!-- 🔹 Desktop only login/signup -->
+        <div class="auth-buttons d-none d-lg-flex align-items-center gap-3" id="auth-buttons">
+          <!-- Not Logged in -->
+          <a class="nav-link login-btn" href="login.html">Log in</a>
+          <a class="btn btn-signup signup-btn" href="signup.html">Sign Up</a>
+
+          <!-- Logged in Profile -->
+          <div class="profile-user d-none align-items-center gap-2" id="desktop-profile">
+            <div class="profile-circle" id="desktop-profile-circle">V</div>
+            <div class="profile-name" id="desktop-profile-name">Vasu</div>
+          </div>
         </div>
 
         <!-- Mobile only logout -->
@@ -67,13 +79,13 @@
     </div>
   </nav>
 
-  <!-- Mobile Profile -->
-  <div class="mobile-profile d-flex align-items-center d-lg-none">
+  <!-- 🔹 Mobile Profile (Top right corner) -->
+  <div class="mobile-profile d-lg-none position-absolute top-0 end-0 p-2">
     <!-- Not logged in -->
     <a href="login.html" class="login-text">Login</a>
 
     <!-- Logged in -->
-    <div class="profile-user d-none">
+    <div class="profile-user d-none align-items-center gap-2" id="mobile-profile">
       <div class="profile-circle" id="profile-circle">V</div>
       <div class="profile-name" id="profile-name">Vasu</div>
     </div>
@@ -81,12 +93,12 @@
 
 
   <div class="container text-center ">
-    <h1 class="h2 text-muted pt-0 mt-0" style="margin-top: 188px;">About Us</h1>
-    <h2 class="text-muted text-center">We are an IT solutions company empowering businesses with services in Tech,
+    <h1 class="h2 pt-0 mt-0" style="margin-top: 188px;">About Us</h1>
+    <h2 class=" h13 text-center">We are an IT solutions company empowering businesses with services in Tech,
       Design,
       Marketing, and Finance.<br>Our mission is to deliver smart, reliable, and growth-focused solutions for clients
       worldwide.</h2>
-    <h3 class="mt-5">The Minds At Frisup</h3>
+    <h3 class="h3 mt-5">The Minds At Frisup</h3>
 
   </div>
 
@@ -94,77 +106,93 @@
   <div class="carousel-container">
     <button class="carousel-btn left">&#10094;</button>
     <div class="carousel" id="carousel">
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/11.jpg" />
-        <div class="name">Jane Cooper</div>
-        <div class="role">Developer</div>
+      <div class="carousel-card"><img src="./images/members/abi bro.jpg" />
+        <div class="name">ABIJITH S</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/12.jpg" />
-        <div class="name">Alex Smith</div>
-        <div class="role">Designer</div>
+      <div class="carousel-card"><img src="./images/members/nibin.png" />
+        <div class="name">NIBIN S</div>
+        <div class="role">TEAM LEAD</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/13.jpg" />
-        <div class="name">Sam Brown</div>
-        <div class="role">Engineer</div>
+      <div class="carousel-card"><img src="./images/members/laddu.png" />
+        <div class="name">ABIJITH S</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/14.jpg" />
-        <div class="name">Tom Hardy</div>
-        <div class="role">Manager</div>
+      <div class="carousel-card"><img src="./images/members/nelu.jpg" />
+        <div class="name">NEELAMBARI D</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/15.jpg" />
-        <div class="name">Mike Lee</div>
-        <div class="role">Analyst</div>
+      <div class="carousel-card"><img src="./images/members/anusree.jpg" />
+        <div class="name">ANU SREE A S</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-        <div class="name">John Wayne</div>
-        <div class="role">Lead</div>
+      <div class="carousel-card"><img src="./images/members/sanjeev.jpg" />
+        <div class="name">SANJEEV S</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/1.jpg" />
-        <div class="name">Jane Cooper</div>
-        <div class="role">Developer</div>
+      <div class="carousel-card"><img src="./images/members/aruneyy.jpg" />
+        <div class="name">ARUN I</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/2.jpg" />
-        <div class="name">Alex Smith</div>
-        <div class="role">Designer</div>
+      <div class="carousel-card"><img src="./images/members/shanusha.jpg" />
+        <div class="name">SHANUSHA CS</div>
+        <div class="role">MARKETING - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/3.jpg" />
-        <div class="name">Sam Brown</div>
-        <div class="role">Engineer</div>
+      <div class="carousel-card"><img src="./images/members/shalu.jpg" />
+        <div class="name">SHALU KRISHNA R R</div>
+        <div class="role">TEAM LEAD</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/4.jpg" />
-        <div class="name">Tom Hardy</div>
-        <div class="role">Manager</div>
+      <div class="carousel-card"><img src="./images/members/saranya.jpg" />
+        <div class="name">SARANYA M</div>
+        <div class="role">UI-UX DESIGNER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/5.jpg" />
-        <div class="name">Mike Lee</div>
-        <div class="role">Analyst</div>
+      <div class="carousel-card"><img src="./images/members/d guy.jpg" />
+        <div class="name">ABINESH S K</div>
+        <div class="role">UI-UX DESIGNER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/6.jpg" />
-        <div class="name">John Wayne</div>
-        <div class="role">Lead</div>
+      <div class="carousel-card"><img src="./images/members/cap.jpg" />
+        <div class="name">SHRAVAN M S</div>
+        <div class="role">TEAM LEAD</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/8.jpg" />
-        <div class="name">Jane Cooper</div>
-        <div class="role">Developer</div>
+      <div class="carousel-card"><img src="./images/members/athira.jpg" />
+        <div class="name">ATHIRA M R</div>
+        <div class="role">DEVELOPER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/9.jpg" />
-        <div class="name">Alex Smith</div>
-        <div class="role">Designer</div>
+      <div class="carousel-card"><img src="./images/members/sanoj.jpg" />
+        <div class="name">SANOJ S</div>
+        <div class="role">DEVELOPER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/10.jpg" />
-        <div class="name">Sam Brown</div>
-        <div class="role">Engineer</div>
+      <div class="carousel-card"><img src="./images/members/thiru.jpg" />
+        <div class="name">THIRU KARTHIKA A</div>
+        <div class="role">DEVELOPER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/17.jpg" />
-        <div class="name">Tom Hardy</div>
-        <div class="role">Manager</div>
+      <div class="carousel-card"><img src="./images/members/arun d.jpg" />
+        <div class="name">ARUN N B</div>
+        <div class="role">DEVELOPER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/18.jpg" />
-        <div class="name">Mike Lee</div>
-        <div class="role">Analyst</div>
+      <div class="carousel-card"><img src="./images/members/sree.jpg" />
+        <div class="name">SREE DEVI M</div>
+        <div class="role">DEVELOPER - L1</div>
       </div>
-      <div class="carousel-card"><img src="https://randomuser.me/api/portraits/men/19.jpg" />
-        <div class="name">John Wayne</div>
-        <div class="role">Lead</div>
+      <div class="carousel-card"><img src="./images/members/big_bro.jpg" />
+        <div class="name">NAVEEN RAJ S</div>
+        <div class="role">DEVELOPER - L1</div>
+      </div>
+      <div class="carousel-card"><img src="./images/members/myyy (1).png" />
+        <div class="name">VASU G</div>
+        <div class="role">DEVELOPER - L1</div>
+      </div>
+      <div class="carousel-card"><img src="./images/members/ashwin.jpg" />
+        <div class="name">ASHWIN M P</div>
+        <div class="role">DEVELOPER - L1</div>
+      </div>
+      <div class="carousel-card"><img src="./images/members/cool guyyy.jpg" />
+        <div class="name">ANEESH P K</div>
+        <div class="role">DEVELOPER - L1</div>
+      </div>
+      <div class="carousel-card"><img src="./images/members/vasujs.jpg" />
+        <div class="name">VASU J S</div>
+        <div class="role">DEVELOPER - L1</div>
       </div>
     </div>
     <div class="dots">
@@ -204,320 +232,6 @@
   </div>
 
   <section id="hiddenContent">
-    <section class="py-3">
-      <div class="container">
-        <h1 class="h2 text-muted pt-0 mt-0 mb-5 text-center">The Minds at frisup </h1>
-        <h1 class="h5 text-muted pt-0 mt-0 mb-5 ">Developers</h1>
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-          </div>
-
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-
-          </div>
-
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-    <section class="py-3">
-      <div class="container">
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-    </section>
-
-
-    <section class="py-3">
-      <div class="container">
-        <h1 class="h5 text-muted pt-0 mt-0 mb-5 ">Developers</h1>
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-          </div>
-
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-
-          </div>
-
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-    <section class="py-3">
-      <div class="container">
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <section class="py-3">
-      <div class="container">
-        <h1 class="h5 text-muted pt-0 mt-0 mb-5 ">Developers</h1>
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-          </div>
-
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-
-          </div>
-
-          <div style="flex: 0 0 20%;">
-
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-
-
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-    <section class="py-3">
-      <div class="container">
-        <div style="display:flex; flex-wrap:nowrap; justify-content:space-between; gap:10px;">
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-
-          <div style="flex: 0 0 20%;">
-            <div class="card"><img src="https://randomuser.me/api/portraits/men/16.jpg" />
-              <div class="name">John Wayne</div>
-              <div class="role">Lead</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-    </section>
-
 
     <div class="container my-5">
       <h1 class="text-muted ms-5 mt-5 ">30+ Skilled professionals</h1>
@@ -581,8 +295,77 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Navbar collapse & close button logic
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // 🔹 Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
+      authDomain: "frisup-d4f6b.firebaseapp.com",
+      projectId: "frisup-d4f6b",
+      storageBucket: "frisup-d4f6b.firebasestorage.app",
+      messagingSenderId: "422380993738",
+      appId: "1:422380993738:web:0fbe35f5926216489a4833"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // 🔹 DOM Elements
+    const loginText = document.querySelector(".login-text"); // mobile login link
+    const mobileProfileDiv = document.querySelector("#mobile-profile");
+    const profileCircle = document.querySelector("#profile-circle");
+    const profileName = document.querySelector("#profile-name");
+
+    const loginBtn = document.querySelector(".login-btn");   // desktop login
+    const signupBtn = document.querySelector(".signup-btn"); // desktop signup
+    const desktopProfileDiv = document.querySelector("#desktop-profile");
+    const desktopProfileCircle = document.querySelector("#desktop-profile-circle");
+    const desktopProfileName = document.querySelector("#desktop-profile-name");
+
+    // 🔹 Auth State Check
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Hide desktop login/signup
+        loginBtn.style.display = "none";
+        signupBtn.style.display = "none";
+        desktopProfileDiv.classList.remove("d-none");
+
+        // Hide mobile login & show profile
+        loginText.style.display = "none";
+        mobileProfileDiv.classList.remove("d-none");
+
+        // Fetch user details
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          const fullName = userData.firstName || "User";
+
+          // Desktop
+          desktopProfileCircle.textContent = fullName.charAt(0).toUpperCase();
+          desktopProfileName.textContent = fullName;
+
+          // Mobile
+          profileCircle.textContent = fullName.charAt(0).toUpperCase();
+          profileName.textContent = fullName;
+        }
+      } else {
+        // Not logged in
+        loginBtn.style.display = "block";
+        signupBtn.style.display = "block";
+        desktopProfileDiv.classList.add("d-none");
+
+        loginText.style.display = "block";
+        mobileProfileDiv.classList.add("d-none");
+      }
+    });
+
+    // 🔹 Navbar collapse & blur logic
     const navCollapse = document.getElementById('navbarNav');
     const closeBtn = document.querySelector('.close-menu');
 
@@ -591,34 +374,12 @@
       bsCollapse.hide();
     });
 
-    // Body blur when menu is open
     navCollapse.addEventListener('show.bs.collapse', () => {
       document.body.classList.add('menu-open');
     });
-
     navCollapse.addEventListener('hidden.bs.collapse', () => {
       document.body.classList.remove('menu-open');
     });
-
-    // Mobile/desktop profile logic
-    const userLoggedIn = true; // toggle true/false to simulate login
-    const userName = "Vasu";
-
-    const loginText = document.querySelector(".login-text");
-    const profileCircle = document.querySelector("#profile-circle");
-    const profileName = document.querySelector("#profile-name");
-    const profileUserDiv = document.querySelector(".profile-user");
-
-    if (userLoggedIn) {
-      loginText.style.display = "none"; // hide login text
-      profileUserDiv.classList.remove("d-none");
-      profileCircle.textContent = userName.charAt(0).toUpperCase();
-      profileName.textContent = userName;
-    } else {
-      loginText.style.display = "block";
-      profileUserDiv.classList.add("d-none");
-    }
-
     const carouselCards = document.querySelectorAll('.carousel-card');
     const dots = document.querySelectorAll('.dot');
     const leftBtn = document.querySelector('.carousel-btn.left');
@@ -658,6 +419,12 @@
 
     document.getElementById("downArrow").addEventListener("click", revealContent);
     document.getElementById("learnMoreBtn").addEventListener("click", revealContent);
+
+    setInterval(() => {
+      document.querySelector(".carousel-btn.right").click();
+    }, 3000);
+
+
   </script>
 </body>
 

@@ -16,29 +16,37 @@ body {
     align-items: center;
 }
 
-h1 {
-    font-family: Inter;
-    font-weight: 600;
-    font-style: Semi Bold;
+.h1 {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: Bold;
     font-size: 24px;
-    color: rgba(85, 85, 85, 1);
+    color: rgba(51, 51, 51, 1);
     padding-top: 50px;
 }
 
-h2 {
-    font-family: Inter;
-    font-weight: 300;
-    font-style: Light;
+.h13 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 16px;
-    color: rgba(85, 85, 85, 1);
+    color: rgba(51, 51, 51, 1);
+}
+
+.h2 {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgba(51, 51, 51, 1);
     padding-top: 10px;
 }
 
-h3 {
-    font-family: Inter;
+.h3 {
+    font-family: sans-serif;
     font-weight: 600;
-    font-style: Semi Bold;
-    font-size: 16px;
+    font-style:Bold;
+    font-size: 24px;
     color: rgba(5, 132, 125, 0.65);
 
 }
@@ -289,7 +297,7 @@ h5 {
     border-radius: 30px;
     padding: 6px 22px;
     font-weight: 400;
-    font-style: Regular;
+    font-style: normal;
     font-size: 16px;
     margin-top: 20px;
 
@@ -335,28 +343,20 @@ h5 {
     color: #555;
 }
 
-
-/* Center the whole carousel block */
 .carousel-container {
     position: relative;
     width: 100%;
     text-align: center;
-    /* centers inline elements inside */
 }
 
-/* Make the row of cards shrink to its content and sit centered */
 .carousel {
     display: inline-flex;
-    /* shrink-wrap to cards */
     justify-content: center;
     align-items: center;
     width: max-content;
-    /* override any width:100% */
     margin: 0 auto;
-    /* safety */
 }
 
-/* Keep arrows on the left/right edges of the container */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -374,10 +374,49 @@ h5 {
     right: 200px;
 }
 
-/* Ensure dots line stays centered */
 .carousel-container .dots {
     display: inline-block;
     margin-top: 12px;
+}
+
+.profile-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #05847eab; /* green shade, change if needed */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.profile-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 100px;
+}
+
+/* Mobile Profile Styling */
+.mobile-profile {
+  z-index: 1050; /* Above navbar */
+}
+.mobile-profile .profile-circle {
+  background: #05847D; /* green */
+  color: white;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-profile .profile-name {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 
@@ -447,148 +486,201 @@ h5 {
 
 /* Tablets (≤ 991px) */
 @media (max-width: 991px) {
-  /* Overlay menu */
-  .navbar-collapse {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 75%;
-    height: 100%;
-    background-color: rgba(5, 132, 125, 0.95);
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-    z-index: 9999;
-  }
 
-  /* Show menu when collapsed */
-  .navbar-collapse.show {
-    transform: translateX(0);
-  }
+    /* Overlay menu */
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100%;
+        background-color: rgba(5, 132, 125, 0.95);
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+        z-index: 9999;
+    }
 
-  /* Close button inside menu */
-  .close-menu {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 28px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10000;
-  }
+    /* Show menu when collapsed */
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
 
-  /* Blur background when menu open */
-  body.menu-open .hero,
-  body.menu-open main,
-  body.menu-open footer {
-    filter: blur(6px);
-    transition: filter 0.3s ease;
-  }
+    /* Close button inside menu */
+    .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10000;
+    }
 
-  /* Mobile nav links color & spacing */
-  .navbar-nav .nav-link {
-    color: #fff !important;
-    font-size: 18px;
-    margin: 10px 0;
-  }
+    /* Blur background when menu open */
+    body.menu-open .hero,
+    body.menu-open main,
+    body.menu-open footer {
+        filter: blur(6px);
+        transition: filter 0.3s ease;
+    }
 
-  /* Mobile logout button */
-  .mobile-logout {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-  }
+    /* Mobile nav links color & spacing */
+    .navbar-nav .nav-link {
+        color: #fff !important;
+        font-size: 18px;
+        margin: 10px 0;
+    }
 
-  .mobile-logout .btn {
-    background-color: #E2F3FB;
-    color: rgb(243, 10, 10) !important;
-    font-weight: 600;
-    font-size: 18px;
+    /* Mobile logout button */
+    .mobile-logout {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .mobile-logout .btn {
+        background-color: #E2F3FB;
+        color: rgb(243, 10, 10) !important;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+      /* Navbar adjustments */
+  .logo-img {
+    width: 120px;
+    height: auto;
+    margin-left: 10px;
   }
 }
 
 /* Mobiles (≤ 576px) */
 @media (max-width: 576px) {
-  /* Navbar adjustments */
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    /* Navbar adjustments */
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .h13 {
+    font-family: 'Inter', sans-serif;
+    text-align: justify !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: rgba(51, 51, 51, 1);
+    padding: 20px;
+    }
+
+    .navbar .navbar-toggler {
+        margin-left: 10px;
+        order: -1;
+        /* move toggler to left */
+        border: none;
+        padding: 2px 6px;
+        /* smaller toggler */
+    }
+
+    /* Custom toggler lines */
+    .navbar-toggler-icon {
+        background-image: none;
+        width: 20px;
+        height: 2px;
+        background-color: #05847D;
+        display: block;
+        position: relative;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: #05847D;
+        left: 0;
+    }
+
+    .navbar-toggler-icon::before {
+        top: -7px;
+    }
+
+    .navbar-toggler-icon::after {
+        top: 7px;
+    }
+
+    /* Mobile profile circle */
+      .profile-user{
+    margin-top: -25px;
+    margin-right: 20px;
   }
 
-  .navbar .navbar-toggler {
-    margin-left: 10px;
-    order: -1; /* move toggler to left */
-    border: none;
-    padding: 2px 6px; /* smaller toggler */
-  }
-
-  /* Custom toggler lines */
-  .navbar-toggler-icon {
-    background-image: none;
-    width: 20px;
-    height: 2px;
-    background-color: #05847D;
-    display: block;
-    position: relative;
-  }
-
-  .navbar-toggler-icon::before,
-  .navbar-toggler-icon::after {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background-color: #05847D;
-    left: 0;
-  }
-
-  .navbar-toggler-icon::before {
-    top: -7px;
-  }
-
-  .navbar-toggler-icon::after {
-    top: 7px;
-  }
-
-  /* Mobile profile circle */
-  .mobile-profile {
-    position: absolute;
-    top: 29px;
-    right: 18px;
-    text-align: center;
-  }
-
-  .profile-circle {
-    width: 29px;
-    height: 29px;
-    border-radius: 50%;
-    background-color: #05847D;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+  #profile-circle {
+    width: 32px;
+    height: 32px;
     font-size: 14px;
-    margin: 0 auto;
-  }
-
-  .profile-name {
-    font-size: 12px;
-    color: #000;
+    background-color: #05847D;
   }
 
   .login-text {
     color: #05847D;
     font-weight: 500;
     text-decoration: none;
+  } 
+
+    /* Prevent horizontal scroll on mobile */
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* Mobile view (≤576px) */
+@media (max-width: 576px) {
+  #hiddenContent .row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 35px;
+    margin-left: -55px !important;
   }
 
-  /* Prevent horizontal scroll on mobile */
-  body {
-    overflow-x: hidden;
+    #hiddenContent .col-md-5 {
+    order: -1; /* force number block to top */
+  }
+
+  #hiddenContent h4 {
+    color: #05847D;
+    font-size: 32px; /* smaller for mobile */
+    margin-bottom: 5px;
+    padding: 0 190px !important;
+  }
+
+  #hiddenContent h5 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+    margin-left: 50px;
+  }
+
+  #hiddenContent p {
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #hiddenContent h1 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+    #hiddenContent h1.text-muted {
+    display: none !important;
   }
 }

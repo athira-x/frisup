@@ -230,3 +230,230 @@ img {
     font-weight: 600;
     margin: 0;
 }
+
+.profile-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #05847eab; /* green shade, change if needed */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.profile-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 100px;
+}
+
+/* Mobile Profile Styling */
+.mobile-profile {
+  z-index: 1050; /* Above navbar */
+}
+.mobile-profile .profile-circle {
+  background: #05847D; /* green */
+  color: white;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-profile .profile-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+
+        .container {
+        margin: 0 !important;
+        padding: 0 15px !important; /* equal left/right padding */
+    }
+
+    .row {
+        margin: 0 !important;
+    }
+
+    .col-5 {
+        display: none !important;
+    }
+
+    .col-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 20px !important;
+        text-align: center;
+    }
+
+    .col-7 p {
+        font-family: 'Inter', sans-serif;
+        text-align: justify;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        width: 300px;
+        color: rgba(51, 51, 51, 1);
+        margin-left: 28px !important;
+
+    }
+
+    .heading-with-line {
+        justify-content: center;
+        margin: 0 !important;
+    }
+}
+
+/* ---------------------------- */
+/* Mobile & Tablet Navbar Only  */
+/* ---------------------------- */
+
+/* Tablets (≤ 991px) */
+@media (max-width: 991px) {
+  /* Overlay menu */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background-color: rgba(5, 132, 125, 0.95);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 9999;
+  }
+
+  /* Show menu when collapsed */
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+
+  /* Close button inside menu */
+  .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* Blur background when menu open */
+  body.menu-open .hero,
+  body.menu-open main,
+  body.menu-open footer {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+
+  /* Mobile nav links color & spacing */
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* Mobile logout button */
+  .mobile-logout {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .mobile-logout .btn {
+    background-color: #E2F3FB;
+    color: rgb(243, 10, 10) !important;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+/* Mobiles (≤ 576px) */
+@media (max-width: 576px) {
+
+      .logo-img {
+    width: 120px;
+    height: auto;
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .navbar-toggler {
+    margin-left: 10px;
+    order: -1; /* move toggler to left */
+    border: none;
+    padding: 2px 6px; /* smaller toggler */
+  }
+
+  /* Custom toggler lines */
+  .navbar-toggler-icon {
+    background-image: none;
+    width: 20px;
+    height: 2px;
+    background-color: #05847D;
+    display: block;
+    position: relative;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #05847D;
+    left: 0;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -7px;
+  }
+
+  .navbar-toggler-icon::after {
+    top: 7px;
+  }
+
+  /* Mobile profile circle */
+    .profile-user{
+    margin-top: -25px;
+    margin-right: 20px;
+  }
+
+  #profile-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    background-color: #05847D;
+  }
+
+  .login-text {
+    color: #05847D;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+}
+

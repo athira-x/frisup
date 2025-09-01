@@ -15,6 +15,12 @@ body {
   padding: 10px 12px;
   font-size: 14px;
 }
+.custom-input:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 5px rgba(0,121,107,0.5);
+  outline: none; /* optional to remove default focus outline */
+}
+
 
 /* Sign Up Button */
 .btn-signup {
@@ -79,3 +85,99 @@ label {
   font-size: 12px;
 }
 
+.form-check-input:checked {
+  background-color: #00796b;
+  border-color: #00796b;
+}
+
+/* --------- Tablet (768px to 1023px) --------- */
+@media (max-width: 1023px) {
+  .custom-row {
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .heading {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .subtext {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .illustration img {
+    margin: 20px auto 0 auto; /* center */
+    display: block;
+    max-width: 70%;
+  }
+
+  .copy {
+    margin-top: 40px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .btn-signup {
+    width: 100px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+/* --------- Mobile (≤767px) --------- */
+@media (max-width: 767px) {
+  .container-fluid {
+    padding: 15px 1px !important;
+  }
+
+  .custom-row {
+    flex-direction: column;
+    width: 94% !important;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 8px;
+  }
+
+  .col-md-6 {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center !important;
+    margin-left: -36px;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .subtext {
+    font-size: 14px;
+  }
+
+  .illustration img {
+    margin: 20px auto;
+    display: block;
+    max-width: 60%; /* smaller on mobile */
+  }
+
+  .copy {
+    margin-top: 20px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .custom-input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .btn-signup {
+    width: 30%;
+    height: 36px;
+    font-size: 13px;
+    border-radius: 20px;
+  }
+}

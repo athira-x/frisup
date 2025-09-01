@@ -15,17 +15,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Loader logic -->
+  <script src="loader.js"></script>
+
+  <!-- Lottie player script -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="index.css">
+
 </head>
 
 <body>
-  
-  <!-- Navbar -->
+
+  <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg py-2">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <!-- Left Side: Toggler + Logo -->
+      <!-- 🔹 Left Side: Logo + Toggler -->
       <div class="d-flex align-items-center">
         <!-- Mobile Toggler -->
         <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -38,28 +45,35 @@
         </a>
       </div>
 
-      <!-- Right Side Menu -->
+      <!-- 🔹 Right Side Menu -->
       <div class="collapse navbar-collapse" id="navbarNav">
 
-        <!-- Close button for mobile menu -->
+        <!-- Close button for mobile -->
         <button class="close-menu d-lg-none">&times;</button>
 
+        <!-- Menu Links -->
         <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 py-2">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
         </ul>
 
-        <!-- Desktop only login/signup -->
-        <div class="auth-buttons d-none d-lg-flex">
-          <a class="nav-link" href="login.html">Log in</a>
-          <a class="btn btn-signup" href="signup.html">Sign Up</a>
+        <!-- 🔹 Desktop Auth Buttons -->
+        <div class="auth-buttons d-none d-lg-flex align-items-center gap-3" id="auth-buttons">
+          <!-- Not Logged in -->
+          <a class="nav-link login-btn" href="login.html">Log in</a>
+          <a class="btn btn-signup signup-btn" href="signup.html">Sign Up</a>
+
+          <!-- Logged in Profile -->
+          <div class="profile-user d-none align-items-center gap-2" id="desktop-profile">
+            <div class="profile-circle" id="desktop-profile-circle">V</div>
+            <div class="profile-name" id="desktop-profile-name">Vasu</div>
+          </div>
         </div>
 
-        <!-- Mobile only logout -->
+        <!-- 🔹 Mobile Only Logout -->
         <div class="mobile-logout d-lg-none mt-auto">
           <a class="btn w-100 text-white border-0" href="logout.html">Logout</a>
         </div>
@@ -67,22 +81,24 @@
     </div>
   </nav>
 
-  <!-- Mobile Profile -->
-  <div class="mobile-profile d-flex align-items-center d-lg-none">
+  <!-- 🔹 Mobile Profile (Top Right Corner) -->
+  <div class="mobile-profile d-lg-none position-absolute top-0 end-0 p-2">
     <!-- Not logged in -->
     <a href="login.html" class="login-text">Login</a>
 
     <!-- Logged in -->
-    <div class="profile-user d-none">
+    <div class="profile-user d-none align-items-center gap-2" id="mobile-profile">
       <div class="profile-circle" id="profile-circle">V</div>
       <div class="profile-name" id="profile-name">Vasu</div>
     </div>
   </div>
 
-  <!-- Hero Section -->
+  <!-- ================= HERO SECTION ================= -->
   <section class="hero">
     <div class="container-fluid px-3 px-md-4">
       <div class="row align-items-center gy-5">
+
+        <!-- 🔹 Hero Text -->
         <div class="col-md-6">
           <div class="hero-heading d-flex flex-column flex-md-row align-items-center">
             <div class="hero-text">
@@ -90,32 +106,105 @@
               <h2 class="hero-subtitle">FRESH RISE UP</h2>
             </div>
             <div class="hero-rocket ms-md-3 mt-3 mt-md-0">
-              <img src="images/rocket.png" class="img-fluid" alt="rocket">
+              <img src="images/rocket.png" class="img-fluid" alt="Rocket">
             </div>
           </div>
 
-          <p class="mt-4">
+          <p class="mt-4 hero-description">
             We provide IT solutions and business support in Marketing, Design, Technology, and Finance.
-            Our team delivers end-to-end services tailored<br> to client needs.
+            Our team delivers end-to-end services tailored to client needs.
             From strategy to execution, we help businesses grow with reliable solutions.
           </p>
 
+          <!-- Hero Buttons -->
           <div class="d-flex flex-column flex-sm-row gap-3 mt-3">
-            <a href="learn_more.html" class="btn btn-main">Learn more</a>
-            <a href="#" class="btn btn-outline-main">Get in touch</a>
+            <a href="learn_more.html" class="btn btn-main with-loader">Learn more</a>
+            <a href="contact.html" class="btn btn-outline-main with-loader">Get in touch</a>
           </div>
         </div>
 
+        <!-- 🔹 Hero Illustration -->
         <div class="col-md-6 text-center text-md-end">
           <img src="images/bg_illustration.svg" class="img-fluid hero-illustration me-md-5" alt="Illustration">
         </div>
       </div>
+    </div>
   </section>
 
-  <!-- Bootstrap JS -->
+  <!-- ================= BOOTSTRAP + FIREBASE ================= -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Navbar collapse & close button logic
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // 🔹 Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
+      authDomain: "frisup-d4f6b.firebaseapp.com",
+      projectId: "frisup-d4f6b",
+      storageBucket: "frisup-d4f6b.firebasestorage.app",
+      messagingSenderId: "422380993738",
+      appId: "1:422380993738:web:0fbe35f5926216489a4833"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // 🔹 DOM Elements
+    const loginText = document.querySelector(".login-text"); // mobile login link
+    const mobileProfileDiv = document.querySelector("#mobile-profile");
+    const profileCircle = document.querySelector("#profile-circle");
+    const profileName = document.querySelector("#profile-name");
+
+    const loginBtn = document.querySelector(".login-btn");   // desktop login
+    const signupBtn = document.querySelector(".signup-btn"); // desktop signup
+    const desktopProfileDiv = document.querySelector("#desktop-profile");
+    const desktopProfileCircle = document.querySelector("#desktop-profile-circle");
+    const desktopProfileName = document.querySelector("#desktop-profile-name");
+
+    // 🔹 Auth State Check
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Hide desktop login/signup
+        loginBtn.style.display = "none";
+        signupBtn.style.display = "none";
+        desktopProfileDiv.classList.remove("d-none");
+
+        // Hide mobile login & show profile
+        loginText.style.display = "none";
+        mobileProfileDiv.classList.remove("d-none");
+
+        // Fetch user details
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          const fullName = userData.firstName || "User";
+
+          // Desktop
+          desktopProfileCircle.textContent = fullName.charAt(0).toUpperCase();
+          desktopProfileName.textContent = fullName;
+
+          // Mobile
+          profileCircle.textContent = fullName.charAt(0).toUpperCase();
+          profileName.textContent = fullName;
+        }
+      } else {
+        // Not logged in
+        loginBtn.style.display = "block";
+        signupBtn.style.display = "block";
+        desktopProfileDiv.classList.add("d-none");
+
+        loginText.style.display = "block";
+        mobileProfileDiv.classList.add("d-none");
+      }
+    });
+
+    // 🔹 Navbar collapse & blur logic
     const navCollapse = document.getElementById('navbarNav');
     const closeBtn = document.querySelector('.close-menu');
 
@@ -124,33 +213,14 @@
       bsCollapse.hide();
     });
 
-    // Body blur when menu is open
     navCollapse.addEventListener('show.bs.collapse', () => {
       document.body.classList.add('menu-open');
     });
-
     navCollapse.addEventListener('hidden.bs.collapse', () => {
       document.body.classList.remove('menu-open');
     });
-
-    // Mobile/desktop profile logic
-    const userLoggedIn = true; // toggle true/false to simulate login
-    const userName = "Vasu";
-
-    const loginText = document.querySelector(".login-text");
-    const profileCircle = document.querySelector("#profile-circle");
-    const profileName = document.querySelector("#profile-name");
-    const profileUserDiv = document.querySelector(".profile-user");
-
-    if (userLoggedIn) {
-      loginText.style.display = "none"; // hide login text
-      profileUserDiv.classList.remove("d-none");
-      profileCircle.textContent = userName.charAt(0).toUpperCase();
-      profileName.textContent = userName;
-    } else {
-      loginText.style.display = "block";
-      profileUserDiv.classList.add("d-none");
-    }
   </script>
+
 </body>
+
 </html>

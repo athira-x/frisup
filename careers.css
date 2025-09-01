@@ -300,6 +300,46 @@ h4 {
   background-color: white;
 }
 
+.profile-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #05847eab; /* green shade, change if needed */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.profile-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 100px;
+}
+
+/* Mobile Profile Styling */
+.mobile-profile {
+  z-index: 1050; /* Above navbar */
+}
+.mobile-profile .profile-circle {
+  background: #05847D; /* green */
+  color: white;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-profile .profile-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
 /* Responsive Adjustments */
 
 /* Tablets (≤ 991px) */
@@ -540,30 +580,16 @@ h4 {
   }
 
   /* Mobile profile circle */
-  .mobile-profile {
-    position: absolute;
-    top: 29px;
-    right: 18px;
-    text-align: center;
+    .profile-user{
+    margin-top: -25px;
+    margin-right: 20px;
   }
 
-  .profile-circle {
-    width: 29px;
-    height: 29px;
-    border-radius: 50%;
-    background-color: #05847D;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+  #profile-circle {
+    width: 32px;
+    height: 32px;
     font-size: 14px;
-    margin: 0 auto;
-  }
-
-  .profile-name {
-    font-size: 12px;
-    color: #000;
+    background-color: #05847D;
   }
 
   .login-text {

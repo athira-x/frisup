@@ -15,8 +15,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Loader logic -->
+    <script src="loader.js"></script>
+
+    <!-- Lottie player script -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="contact.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("WB09lYz1uCvePf7zl");
+        })();
+    </script>
+    <style>
+        .error-msg {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .success-msg {
+            color: #28a745;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,38 +51,36 @@
     <nav class="navbar navbar-expand-lg py-2">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <!-- Left Side: Toggler + Logo -->
             <div class="d-flex align-items-center">
-                <!-- Mobile Toggler -->
                 <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Logo -->
                 <a class="navbar-brand m-0" href="index.html">
                     <img src="images/logo.png" alt="FrisUp Logo" class="logo-img">
                 </a>
             </div>
 
-            <!-- Right Side Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
-
-                <!-- Close button for mobile menu -->
                 <button class="close-menu d-lg-none">&times;</button>
-
                 <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-4 py-2">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
                 </ul>
 
-                <!-- Desktop only login/signup -->
-                <div class="auth-buttons d-none d-lg-flex">
-                    <a class="nav-link" href="login.html">Log in</a>
-                    <a class="btn btn-signup" href="signup.html">Sign Up</a>
+                <!-- 🔹 Desktop only login/signup -->
+                <div class="auth-buttons d-none d-lg-flex align-items-center gap-3" id="auth-buttons">
+                    <!-- Not Logged in -->
+                    <a class="nav-link login-btn" href="login.html">Log in</a>
+                    <a class="btn btn-signup signup-btn" href="signup.html">Sign Up</a>
+
+                    <!-- Logged in Profile -->
+                    <div class="profile-user d-none align-items-center gap-2" id="desktop-profile">
+                        <div class="profile-circle" id="desktop-profile-circle">V</div>
+                        <div class="profile-name" id="desktop-profile-name">Vasu</div>
+                    </div>
                 </div>
 
                 <!-- Mobile only logout -->
@@ -67,21 +91,22 @@
         </div>
     </nav>
 
-    <!-- Mobile Profile -->
-    <div class="mobile-profile d-flex align-items-center d-lg-none">
+    <!-- 🔹 Mobile Profile (Top right corner) -->
+    <div class="mobile-profile d-lg-none position-absolute top-0 end-0 p-2">
         <!-- Not logged in -->
         <a href="login.html" class="login-text">Login</a>
 
         <!-- Logged in -->
-        <div class="profile-user d-none">
+        <div class="profile-user d-none align-items-center gap-2" id="mobile-profile">
             <div class="profile-circle" id="profile-circle">V</div>
             <div class="profile-name" id="profile-name">Vasu</div>
         </div>
     </div>
 
+    <!-- Contact Section -->
     <section class="contact-section d-flex flex-column align-items-center justify-content-center">
-        <h2 class="fw-bold mb-2">Contact Us</h2>
-        <p class="text-muted mb-5">Have a project in mind or need support? We’re here to help.<br>Reach out to our team
+        <h2 class="h21 mb-2">CONTACT US</h2>
+        <p class="p1 mb-5">Have a project in mind or need support? We’re here to help.<br>Reach out to our team
             anytime—we’ll get back to you quickly.</p>
 
         <div class="row w-100 justify-content-center">
@@ -94,26 +119,32 @@
             <!-- Form -->
             <div class="col-md-6">
                 <h4 class="fw-semibold mb-4">Get in Touch</h4>
-                <form>
+                <form id="contactForm">
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control custom-input" placeholder="Enter your full name">
+                            <input type="text" id="name" class="form-control custom-input"
+                                placeholder="Enter your full name">
+                            <div class="error-msg" id="error-name"></div>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control custom-input"
+                            <input type="text" id="phone" class="form-control custom-input"
                                 placeholder="Enter your contact number">
+                            <div class="error-msg" id="error-phone"></div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control custom-input" placeholder="Enter your email">
+                        <input type="email" id="email" class="form-control custom-input" placeholder="Enter your email">
+                        <div class="error-msg" id="error-email"></div>
                     </div>
                     <div class="mb-3">
-                        <textarea class="form-control custom-input" rows="5"
+                        <textarea id="message" class="form-control custom-input" rows="5"
                             placeholder="Enter your message here"></textarea>
+                        <div class="error-msg" id="error-message"></div>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn btn-submit">Submit</button>
+                        <button type="submit" class="btn btn-submit with-loader">Submit</button>
                     </div>
+                    <div id="formStatus" class="mt-2 text-start"></div>
                 </form>
             </div>
         </div>
@@ -124,59 +155,142 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-3">
-                    <h6 class="fw-bold text-white mb-3">quick Links</h6>
+                    <h6 class="fw-bold text-white mb-3">Quick Links</h6>
                     <ul class="list-unstyled text-white-50">
-                        <li>Home</li>
-                        <li>Services</li>
-                        <li>Careers</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li><a href="./index.html" class="footer-link">Home</a></li>
+                        <li><a href="./services.html" class="footer-link">Services</a></li>
+                        <li><a href="./careers.html" class="footer-link">Careers</a></li>
+                        <li><a href="./about.html" class="footer-link">About</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h6 class="fw-bold text-white mb-3">Supports</h6>
                     <ul class="list-unstyled text-white-50">
-                        <li>24/7 Assistance Team</li>
-                        <li>Help Center</li>
-                        <li>Community</li>
-                        <li>Terms & Conditions</li>
-                        <li>Services</li>
+                        <li><a href="https://chat.whatsapp.com/Gt7pC7q15WJ1uWV2v1Pbt5" target="_blank"
+                                class="footer-link">24/7 Assistance Team</a></li>
+                        <li><a href="https://chat.whatsapp.com/Gt7pC7q15WJ1uWV2v1Pbt5" target="_blank"
+                                class="footer-link">Help Center</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h6 class="fw-bold text-white mb-3">Contact</h6>
                     <ul class="list-unstyled text-white-50">
-                        <li>91+ 9003610704</li>
+                        <li>+91 9003610704</li>
                         <li>frisup@gmail.com</li>
-                        <li>Community</li>
+                        <li><a href="https://chat.whatsapp.com/KwT8iaK6ZQGI8GEdcy4jkT" target="_blank"
+                                class="footer-link">whatsapp Community</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <div class="d-flex mb-3">
-                        <input type="email" class="form-control custom-input" placeholder="Enter your email">
-                        <button class="btn btn-send"><i class="bi bi-send"></i></button>
+                        <input type="email" id="newsletterEmail" class="form-control custom-input"
+                            placeholder="Enter your email">
+                        <button id="sendNewsletter" class="btn btn-send with-loader">Send</button>
                     </div>
-                    <div class="social-icons d-flex gap-3">
-                        <i class="bi bi-whatsapp"></i>
-                        <i class="bi bi-facebook"></i>
-                        <i class="bi bi-instagram"></i>
-                        <i class="bi bi-linkedin"></i>
-                        <i class="bi bi-github"></i>
+                    <div class="error-msg" id="error-newsletter"></div>
+                    <div class="success-msg" id="newsletterStatus"></div>
+
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a href="https://chat.whatsapp.com/KwT8iaK6ZQGI8GEdcy4jkT" target="_blank" class="social-link">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://facebook.com/yourpage" target="_blank" class="social-link">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/frisup_it_solutions?igsh=cnU1YnF4eTVyc2ps" target="_blank" class="social-link">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/yourprofile" target="_blank" class="social-link">
+                            <i class="bi bi-github"></i>
+                        </a>
                     </div>
+
                     <div class="text-center text-white-50 mt-4">
                         © 2025 Frisup IT Solutions. All rights reserved.<br>
                         <a href="#" class="text-white-50">Terms & Conditions</a> | <a href="#"
-                            class="text-white-50">Privacy
-                            Policy</a>
+                            class="text-white-50">Privacy Policy</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Navbar collapse & close button logic
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // 🔹 Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
+            authDomain: "frisup-d4f6b.firebaseapp.com",
+            projectId: "frisup-d4f6b",
+            storageBucket: "frisup-d4f6b.firebasestorage.app",
+            messagingSenderId: "422380993738",
+            appId: "1:422380993738:web:0fbe35f5926216489a4833"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // 🔹 DOM Elements
+        const loginText = document.querySelector(".login-text"); // mobile login link
+        const mobileProfileDiv = document.querySelector("#mobile-profile");
+        const profileCircle = document.querySelector("#profile-circle");
+        const profileName = document.querySelector("#profile-name");
+
+        const loginBtn = document.querySelector(".login-btn");   // desktop login
+        const signupBtn = document.querySelector(".signup-btn"); // desktop signup
+        const desktopProfileDiv = document.querySelector("#desktop-profile");
+        const desktopProfileCircle = document.querySelector("#desktop-profile-circle");
+        const desktopProfileName = document.querySelector("#desktop-profile-name");
+
+        // 🔹 Auth State Check
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // Hide desktop login/signup
+                loginBtn.style.display = "none";
+                signupBtn.style.display = "none";
+                desktopProfileDiv.classList.remove("d-none");
+
+                // Hide mobile login & show profile
+                loginText.style.display = "none";
+                mobileProfileDiv.classList.remove("d-none");
+
+                // Fetch user details
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    const fullName = userData.firstName || "User";
+
+                    // Desktop
+                    desktopProfileCircle.textContent = fullName.charAt(0).toUpperCase();
+                    desktopProfileName.textContent = fullName;
+
+                    // Mobile
+                    profileCircle.textContent = fullName.charAt(0).toUpperCase();
+                    profileName.textContent = fullName;
+                }
+            } else {
+                // Not logged in
+                loginBtn.style.display = "block";
+                signupBtn.style.display = "block";
+                desktopProfileDiv.classList.add("d-none");
+
+                loginText.style.display = "block";
+                mobileProfileDiv.classList.add("d-none");
+            }
+        });
+
+        // 🔹 Navbar collapse & blur logic
         const navCollapse = document.getElementById('navbarNav');
         const closeBtn = document.querySelector('.close-menu');
 
@@ -185,33 +299,100 @@
             bsCollapse.hide();
         });
 
-        // Body blur when menu is open
         navCollapse.addEventListener('show.bs.collapse', () => {
             document.body.classList.add('menu-open');
         });
-
         navCollapse.addEventListener('hidden.bs.collapse', () => {
             document.body.classList.remove('menu-open');
         });
 
-        // Mobile/desktop profile logic
-        const userLoggedIn = true; // toggle true/false to simulate login
-        const userName = "Vasu";
+        // Contact Form Validation & Submission
+        const contactForm = document.getElementById("contactForm");
+        const formStatus = document.getElementById("formStatus");
 
-        const loginText = document.querySelector(".login-text");
-        const profileCircle = document.querySelector("#profile-circle");
-        const profileName = document.querySelector("#profile-name");
-        const profileUserDiv = document.querySelector(".profile-user");
+        const fields = [
+            { id: "name", errorId: "error-name", message: "Please enter your name" },
+            { id: "phone", errorId: "error-phone", message: "Please enter your phone number" },
+            { id: "email", errorId: "error-email", message: "Please enter a valid email" },
+            { id: "message", errorId: "error-message", message: "Please enter your message" }
+        ];
 
-        if (userLoggedIn) {
-            loginText.style.display = "none"; // hide login text
-            profileUserDiv.classList.remove("d-none");
-            profileCircle.textContent = userName.charAt(0).toUpperCase();
-            profileName.textContent = userName;
-        } else {
-            loginText.style.display = "block";
-            profileUserDiv.classList.add("d-none");
-        }
+        // Remove error as soon as user types
+        fields.forEach(f => {
+            const input = document.getElementById(f.id);
+            const errorDiv = document.getElementById(f.errorId);
+            input.addEventListener("input", () => {
+                if (input.value.trim()) errorDiv.textContent = "";
+            });
+        });
+
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            let valid = true;
+
+            fields.forEach(f => {
+                const input = document.getElementById(f.id);
+                const errorDiv = document.getElementById(f.errorId);
+                if (!input.value.trim()) {
+                    errorDiv.textContent = f.message;
+                    valid = false;
+                }
+            });
+
+            if (!valid) return;
+
+            emailjs.send("service_bel7dgx", "template_0e9u3uw", {
+                user_name: document.getElementById("name").value.trim(),
+                user_phone: document.getElementById("phone").value.trim(),
+                user_email: document.getElementById("email").value.trim(),
+                user_message: document.getElementById("message").value.trim()
+            })
+                .then(() => {
+                    formStatus.textContent = "Message sent successfully!";
+                    formStatus.className = "success-msg";
+                    contactForm.reset();
+                    // Hide success message after 3 seconds
+                    setTimeout(() => formStatus.textContent = "", 3000);
+                })
+                .catch(() => {
+                    formStatus.textContent = "Failed to send. Try again.";
+                    formStatus.className = "error-msg";
+                });
+        });
+
+        // Newsletter
+        const newsletterEmail = document.getElementById("newsletterEmail");
+        const newsletterStatus = document.getElementById("newsletterStatus");
+        const errorNewsletter = document.getElementById("error-newsletter");
+        const sendNewsletter = document.getElementById("sendNewsletter");
+
+        // Remove error while typing
+        newsletterEmail.addEventListener("input", () => errorNewsletter.textContent = "");
+
+        sendNewsletter.addEventListener("click", function (e) {
+            e.preventDefault();
+            const email = newsletterEmail.value.trim();
+            errorNewsletter.textContent = "";
+            newsletterStatus.textContent = "";
+
+            if (!email || !/\S+@\S+\.\S+/.test(email)) {
+                errorNewsletter.textContent = "Please enter a valid email.";
+                return;
+            }
+
+            emailjs.send("service_bel7dgx", "template_0e9u3uw", { user_email: email })
+                .then(() => {
+                    newsletterStatus.textContent = "Subscribed successfully!";
+                    newsletterStatus.className = "success-msg";
+                    newsletterEmail.value = "";
+                    setTimeout(() => newsletterStatus.textContent = "", 3000); // Hide after 3 sec
+                })
+                .catch(() => {
+                    newsletterStatus.textContent = "Failed to send. Try again.";
+                    newsletterStatus.className = "error-msg";
+                });
+        });
+
     </script>
 </body>
 
