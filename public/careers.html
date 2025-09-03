@@ -59,37 +59,37 @@
                 </ul>
 
                 <!-- 🔹 Desktop only login/signup -->
-        <div class="auth-buttons d-none d-lg-flex align-items-center gap-3" id="auth-buttons">
-          <!-- Not Logged in -->
-          <a class="nav-link login-btn" href="login.html">Log in</a>
-          <a class="btn btn-signup signup-btn" href="signup.html">Sign Up</a>
+                <div class="auth-buttons d-none d-lg-flex align-items-center gap-3" id="auth-buttons">
+                    <!-- Not Logged in -->
+                    <a class="nav-link login-btn" href="login.html">Log in</a>
+                    <a class="btn btn-signup signup-btn" href="signup.html">Sign Up</a>
 
-          <!-- Logged in Profile -->
-          <div class="profile-user d-none align-items-center gap-2" id="desktop-profile">
-            <div class="profile-circle" id="desktop-profile-circle">V</div>
-            <div class="profile-name" id="desktop-profile-name">Vasu</div>
-          </div>
-        </div>
+                    <!-- Logged in Profile -->
+                    <div class="profile-user d-none align-items-center gap-2" id="desktop-profile">
+                        <div class="profile-circle" id="desktop-profile-circle">V</div>
+                        <div class="profile-name" id="desktop-profile-name">Vasu</div>
+                    </div>
+                </div>
 
-        <!-- Mobile only logout -->
-        <div class="mobile-logout d-lg-none mt-auto">
-          <a class="btn w-100 text-white border-0" href="logout.html">Logout</a>
-        </div>
+                <!-- Mobile only logout -->
+                <div class="mobile-logout d-lg-none mt-auto">
+                    <a class="btn w-100 text-white border-0" href="logout.html">Logout</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- 🔹 Mobile Profile (Top right corner) -->
-  <div class="mobile-profile d-lg-none position-absolute top-0 end-0 p-2">
-    <!-- Not logged in -->
-    <a href="login.html" class="login-text">Login</a>
+    <div class="mobile-profile d-lg-none position-absolute top-0 end-0 p-2">
+        <!-- Not logged in -->
+        <a href="login.html" class="login-text">Login</a>
 
-    <!-- Logged in -->
-    <div class="profile-user d-none align-items-center gap-2" id="mobile-profile">
-      <div class="profile-circle" id="profile-circle">V</div>
-      <div class="profile-name" id="profile-name">Vasu</div>
+        <!-- Logged in -->
+        <div class="profile-user d-none align-items-center gap-2" id="mobile-profile">
+            <div class="profile-circle" id="profile-circle">V</div>
+            <div class="profile-name" id="profile-name">Vasu</div>
+        </div>
     </div>
-  </div>
 
     <section class=" py-3">
         <div class="container text-center ">
@@ -325,91 +325,114 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    // 🔹 Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
-      authDomain: "frisup-d4f6b.firebaseapp.com",
-      projectId: "frisup-d4f6b",
-      storageBucket: "frisup-d4f6b.firebasestorage.app",
-      messagingSenderId: "422380993738",
-      appId: "1:422380993738:web:0fbe35f5926216489a4833"
-    };
+        // 🔹 Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
+            authDomain: "frisup-d4f6b.firebaseapp.com",
+            projectId: "frisup-d4f6b",
+            storageBucket: "frisup-d4f6b.firebasestorage.app",
+            messagingSenderId: "422380993738",
+            appId: "1:422380993738:web:0fbe35f5926216489a4833"
+        };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
 
-    // 🔹 DOM Elements
-    const loginText = document.querySelector(".login-text"); // mobile login link
-    const mobileProfileDiv = document.querySelector("#mobile-profile");
-    const profileCircle = document.querySelector("#profile-circle");
-    const profileName = document.querySelector("#profile-name");
+        // 🔹 DOM Elements
+        const loginText = document.querySelector(".login-text"); // mobile login link
+        const mobileProfileDiv = document.querySelector("#mobile-profile");
+        const profileCircle = document.querySelector("#profile-circle");
+        const profileName = document.querySelector("#profile-name");
 
-    const loginBtn = document.querySelector(".login-btn");   // desktop login
-    const signupBtn = document.querySelector(".signup-btn"); // desktop signup
-    const desktopProfileDiv = document.querySelector("#desktop-profile");
-    const desktopProfileCircle = document.querySelector("#desktop-profile-circle");
-    const desktopProfileName = document.querySelector("#desktop-profile-name");
+        const loginBtn = document.querySelector(".login-btn");   // desktop login
+        const signupBtn = document.querySelector(".signup-btn"); // desktop signup
+        const desktopProfileDiv = document.querySelector("#desktop-profile");
+        const desktopProfileCircle = document.querySelector("#desktop-profile-circle");
+        const desktopProfileName = document.querySelector("#desktop-profile-name");
 
-    // 🔹 Auth State Check
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        // Hide desktop login/signup
-        loginBtn.style.display = "none";
-        signupBtn.style.display = "none";
-        desktopProfileDiv.classList.remove("d-none");
+        // 🔹 Auth State Check
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // Hide desktop login/signup
+                loginBtn.style.display = "none";
+                signupBtn.style.display = "none";
+                desktopProfileDiv.classList.remove("d-none");
 
-        // Hide mobile login & show profile
-        loginText.style.display = "none";
-        mobileProfileDiv.classList.remove("d-none");
+                // Hide mobile login & show profile
+                loginText.style.display = "none";
+                mobileProfileDiv.classList.remove("d-none");
 
-        // Fetch user details
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
+                // Fetch user details
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists()) {
-          const userData = docSnap.data();
-          const fullName = userData.firstName || "User";
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    const fullName = userData.firstName || "User";
 
-          // Desktop
-          desktopProfileCircle.textContent = fullName.charAt(0).toUpperCase();
-          desktopProfileName.textContent = fullName;
+                    // Desktop
+                    desktopProfileCircle.textContent = fullName.charAt(0).toUpperCase();
+                    desktopProfileName.textContent = fullName;
 
-          // Mobile
-          profileCircle.textContent = fullName.charAt(0).toUpperCase();
-          profileName.textContent = fullName;
-        }
-      } else {
-        // Not logged in
-        loginBtn.style.display = "block";
-        signupBtn.style.display = "block";
-        desktopProfileDiv.classList.add("d-none");
+                    // Mobile
+                    profileCircle.textContent = fullName.charAt(0).toUpperCase();
+                    profileName.textContent = fullName;
+                }
+            } else {
+                // Not logged in
+                loginBtn.style.display = "block";
+                signupBtn.style.display = "block";
+                desktopProfileDiv.classList.add("d-none");
 
-        loginText.style.display = "block";
-        mobileProfileDiv.classList.add("d-none");
-      }
-    });
+                loginText.style.display = "block";
+                mobileProfileDiv.classList.add("d-none");
+            }
+        });
 
-    // 🔹 Navbar collapse & blur logic
-    const navCollapse = document.getElementById('navbarNav');
-    const closeBtn = document.querySelector('.close-menu');
+        // 🔹 Navbar collapse & blur logic
+        const navCollapse = document.getElementById('navbarNav');
+        const closeBtn = document.querySelector('.close-menu');
 
-    closeBtn.addEventListener('click', () => {
-      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
-      bsCollapse.hide();
-    });
+        closeBtn.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+            bsCollapse.hide();
+        });
 
-    navCollapse.addEventListener('show.bs.collapse', () => {
-      document.body.classList.add('menu-open');
-    });
-    navCollapse.addEventListener('hidden.bs.collapse', () => {
-      document.body.classList.remove('menu-open');
-    });
-  </script>
+        navCollapse.addEventListener('show.bs.collapse', () => {
+            document.body.classList.add('menu-open');
+        });
+        navCollapse.addEventListener('hidden.bs.collapse', () => {
+            document.body.classList.remove('menu-open');
+        });
+
+        document.querySelectorAll(".outer-card").forEach(card => {
+            const pages = card.querySelectorAll(".page");
+            const dots = card.querySelectorAll(".dot");
+            const arrows = card.querySelectorAll(".arrow-icon");
+            let current = 0;
+
+            function showPage(index) {
+                pages[current].classList.remove("active");
+                dots[current].classList.remove("active");
+                current = index;
+                pages[current].classList.add("active");
+                dots[current].classList.add("active");
+            }
+
+            arrows.forEach(arrow => {
+                arrow.addEventListener("click", () => {
+                    let next = (current + 1) % pages.length;
+                    showPage(next);
+                });
+            });
+        });
+
+    </script>
 
 </body>
 

@@ -449,6 +449,8 @@ img {
     color: #05847D;
     font-weight: 500;
     text-decoration: none;
+    margin-top: 41px;
+    margin-right: 18px !important;
   }
 
   /* Prevent horizontal scroll on mobile */
