@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Frisup IT Solutions</title>
+
+  <!--frisup(logo in browser tab)-->
+  <link rel="icon" type="png" href="images/rocket.png">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,21 +46,21 @@
       <div class="col-md-5 p-5">
         <form id="loginForm">
           <div class="mb-3">
-  <label for="email">Email</label>
-  <input type="email" id="email" class="form-control custom-input" placeholder="Mail Address">
-  <div id="email-error" style="color:red; font-size:12px; margin-top:3px;"></div>
-</div>
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control custom-input" placeholder="Mail Address">
+            <div id="email-error" style="color:red; font-size:12px; margin-top:3px;"></div>
+          </div>
 
-<div class="mb-3 position-relative">
-  <label for="password">Password</label>
-  <div class="input-group">
-    <input type="password" id="password" class="form-control custom-input" placeholder="Password">
-    <span class="input-group-text bg-white" style="cursor:pointer;">
-      <i class="bi bi-eye-slash" id="togglePassword"></i>
-    </span>
-  </div>
-  <div id="password-error" style="color:red; font-size:12px; margin-top:3px;"></div>
-</div>
+          <div class="mb-3 position-relative">
+            <label for="password">Password</label>
+            <div class="input-group">
+              <input type="password" id="password" class="form-control custom-input" placeholder="Password">
+              <span class="input-group-text bg-white" style="cursor:pointer;">
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+              </span>
+            </div>
+            <div id="password-error" style="color:red; font-size:12px; margin-top:3px;"></div>
+          </div>
 
 
           <!-- Remember & Forgot Password Row -->
@@ -67,7 +71,8 @@
               <label class="form-check-label" for="terms" style="font-size: 12px; margin:0;">Remember Me</label>
             </div>
             <!-- Forgot Password -->
-            <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" style="color:#05847D; font-size:12px; text-decoration:none;">Forgot password?</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"
+              style="color:#05847D; font-size:12px; text-decoration:none;">Forgot password?</a>
           </div>
 
           <!-- Signup + Login Button -->
@@ -80,26 +85,27 @@
         </form>
       </div>
     </div>
-      <!-- Forgot Password Modal -->
-  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content p-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Reset Password</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <label for="resetEmail" class="form-label">Enter your email address</label>
-          <input type="email" id="resetEmail" class="form-control" placeholder="Email" required>
-          <div id="resetMessage" class="text-success mt-2" style="font-size: 13px;"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light text-dark" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn" style="background:#05847D; color:white;" id="sendResetLink">Send Link</button>
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Reset Password</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="resetEmail" class="form-label">Enter your email address</label>
+            <input type="email" id="resetEmail" class="form-control" placeholder="Email" required>
+            <div id="resetMessage" class="text-success mt-2" style="font-size: 13px;"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light text-dark" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn" style="background:#05847D; color:white;" id="sendResetLink">Send
+              Link</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Bootstrap Icons -->
@@ -108,138 +114,138 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Internal Firebase JS -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { 
-    getAuth, 
-    signInWithEmailAndPassword, 
-    sendPasswordResetEmail 
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      sendPasswordResetEmail
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  // Firebase Config
-  const firebaseConfig = {
-    apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
-    authDomain: "frisup-d4f6b.firebaseapp.com",
-    projectId: "frisup-d4f6b",
-    storageBucket: "frisup-d4f6b.firebasestorage.app",
-    messagingSenderId: "422380993738",
-    appId: "1:422380993738:web:0fbe35f5926216489a4833"
-  };
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyB59SzbdTmlYRc48RkPlTGjJfYfBTsv2lM",
+      authDomain: "frisup-d4f6b.firebaseapp.com",
+      projectId: "frisup-d4f6b",
+      storageBucket: "frisup-d4f6b.firebasestorage.app",
+      messagingSenderId: "422380993738",
+      appId: "1:422380993738:web:0fbe35f5926216489a4833"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-  // Show error under field
-  function showError(inputId, message) {
-  const input = document.getElementById(inputId);
+    // Show error under field
+    function showError(inputId, message) {
+      const input = document.getElementById(inputId);
 
-  // remove old error
-  let oldError = document.getElementById(inputId + "-error");
-  if (oldError) oldError.remove();
+      // remove old error
+      let oldError = document.getElementById(inputId + "-error");
+      if (oldError) oldError.remove();
 
-  input.classList.add("is-invalid");
+      input.classList.add("is-invalid");
 
-  const errorDiv = document.createElement("div");
-  errorDiv.id = inputId + "-error";   // unique
-  errorDiv.className = "error-text text-danger mt-1";
-  errorDiv.style.fontSize = "12px";
-  errorDiv.textContent = message;
+      const errorDiv = document.createElement("div");
+      errorDiv.id = inputId + "-error";   // unique
+      errorDiv.className = "error-text text-danger mt-1";
+      errorDiv.style.fontSize = "12px";
+      errorDiv.textContent = message;
 
-  // ✅ always put error message under whole field wrapper
-  input.closest(".mb-3").appendChild(errorDiv);
+      // ✅ always put error message under whole field wrapper
+      input.closest(".mb-3").appendChild(errorDiv);
 
-  // clear while typing
-  input.addEventListener("input", () => {
-    input.classList.remove("is-invalid");
-    let err = document.getElementById(inputId + "-error");
-    if (err) err.remove();
-  }, { once: true });
-}
-
-
-  // Clear all errors
-  function clearErrors() {
-    document.querySelectorAll(".is-invalid").forEach(el => el.classList.remove("is-invalid"));
-    document.querySelectorAll(".error-text").forEach(el => el.remove());
-  }
-
-  // Firebase error messages
-  function getFriendlyMessage(errorCode) {
-    switch (errorCode) {
-      case "auth/invalid-email":
-        return { field: "email", msg: "Please enter a valid email address." };
-      case "auth/user-not-found":
-        return { field: "email", msg: "No account found with this email." };
-      case "auth/wrong-password":
-      case "auth/invalid-credential": // covers wrong email/password
-        return { field: "password", msg: "Incorrect email or password." };
-      case "auth/missing-password":
-        return { field: "password", msg: "Password cannot be empty." };
-      case "auth/too-many-requests":
-        return { field: "password", msg: "Too many failed attempts. Please try again later." };
-      default:
-        return { field: "password", msg: "Something went wrong. Please try again." };
-    }
-  }
-
-  // Login form submit
-  document.getElementById("loginForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    clearErrors();
-
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        // ✅ success → redirect to home
-        window.location.href = "index.html";
-      })
-      .catch((error) => {
-        const { field, msg } = getFriendlyMessage(error.code);
-        showError(field, msg);
-      });
-  });
-
-  // Toggle password visibility
-  const togglePassword = document.querySelector("#togglePassword");
-  const passwordInput = document.querySelector("#password");
-
-  togglePassword.addEventListener("click", () => {
-    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-    passwordInput.setAttribute("type", type);
-
-    // Toggle icon
-    togglePassword.classList.toggle("bi-eye");
-    togglePassword.classList.toggle("bi-eye-slash");
-  });
-
-  // Forgot Password Handler
-  document.getElementById("sendResetLink").addEventListener("click", () => {
-    const resetEmail = document.getElementById("resetEmail").value.trim();
-    const msgBox = document.getElementById("resetMessage");
-
-    if (!resetEmail) {
-      msgBox.textContent = "Please enter your email.";
-      msgBox.classList.remove("text-success");
-      msgBox.classList.add("text-danger");
-      return;
+      // clear while typing
+      input.addEventListener("input", () => {
+        input.classList.remove("is-invalid");
+        let err = document.getElementById(inputId + "-error");
+        if (err) err.remove();
+      }, { once: true });
     }
 
-    sendPasswordResetEmail(auth, resetEmail)
-      .then(() => {
-        msgBox.textContent = "Password reset link sent! Check your inbox.";
-        msgBox.classList.remove("text-danger");
-        msgBox.classList.add("text-success");
-      })
-      .catch((error) => {
-        msgBox.textContent = error.message;
+
+    // Clear all errors
+    function clearErrors() {
+      document.querySelectorAll(".is-invalid").forEach(el => el.classList.remove("is-invalid"));
+      document.querySelectorAll(".error-text").forEach(el => el.remove());
+    }
+
+    // Firebase error messages
+    function getFriendlyMessage(errorCode) {
+      switch (errorCode) {
+        case "auth/invalid-email":
+          return { field: "email", msg: "Please enter a valid email address." };
+        case "auth/user-not-found":
+          return { field: "email", msg: "No account found with this email." };
+        case "auth/wrong-password":
+        case "auth/invalid-credential": // covers wrong email/password
+          return { field: "password", msg: "Incorrect email or password." };
+        case "auth/missing-password":
+          return { field: "password", msg: "Password cannot be empty." };
+        case "auth/too-many-requests":
+          return { field: "password", msg: "Too many failed attempts. Please try again later." };
+        default:
+          return { field: "password", msg: "Something went wrong. Please try again." };
+      }
+    }
+
+    // Login form submit
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          // ✅ success → redirect to home
+          window.location.href = "index.html";
+        })
+        .catch((error) => {
+          const { field, msg } = getFriendlyMessage(error.code);
+          showError(field, msg);
+        });
+    });
+
+    // Toggle password visibility
+    const togglePassword = document.querySelector("#togglePassword");
+    const passwordInput = document.querySelector("#password");
+
+    togglePassword.addEventListener("click", () => {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+
+      // Toggle icon
+      togglePassword.classList.toggle("bi-eye");
+      togglePassword.classList.toggle("bi-eye-slash");
+    });
+
+    // Forgot Password Handler
+    document.getElementById("sendResetLink").addEventListener("click", () => {
+      const resetEmail = document.getElementById("resetEmail").value.trim();
+      const msgBox = document.getElementById("resetMessage");
+
+      if (!resetEmail) {
+        msgBox.textContent = "Please enter your email.";
         msgBox.classList.remove("text-success");
         msgBox.classList.add("text-danger");
-      });
-  });
+        return;
+      }
 
-</script>
+      sendPasswordResetEmail(auth, resetEmail)
+        .then(() => {
+          msgBox.textContent = "Password reset link sent! Check your inbox.";
+          msgBox.classList.remove("text-danger");
+          msgBox.classList.add("text-success");
+        })
+        .catch((error) => {
+          msgBox.textContent = error.message;
+          msgBox.classList.remove("text-success");
+          msgBox.classList.add("text-danger");
+        });
+    });
+
+  </script>
 
 
 

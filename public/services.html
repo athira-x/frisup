@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services - Frisup</title>
 
+  <!--frisup(logo in browser tab)-->
+  <link rel="icon" type="png" href="images/rocket.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,8 +98,8 @@
   <!-- ===================== Services Section ===================== -->
   <section class="services py-3">
     <div class="container text-center">
-      <h1 class="h2 text-muted pt-0 mt-0">WHAT WE DO</h1>
-      <h2>
+      <h1 class="mt-0">WHAT WE DO</h1>
+      <h2 class="text-center text-muted">
         We deliver IT solutions in Marketing, Design, Tech, and Finance.<br>
         Our services help businesses grow with smart, reliable strategies.
       </h2>
@@ -108,8 +111,9 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <h3 class="h5">Tech</h3>
           <div class="card p-3 mx-3 d-flex align-items-center text-center">
-            <img src="images/tech.png" class="mb-2 service-img">
-            <p>We build custom software, web, and mobile applications.<br>Our solutions are secure, scalable, and future-ready.</p>
+            <img src="images/tech.png" class="mb-4 service-img">
+            <p>We build custom software, web, and mobile applications.<br>Our solutions are secure, scalable, and
+              future-ready.</p>
             <a class="btn btn-learn mt-auto with-loader" href="./tech.html">Learn more</a>
           </div>
         </div>
@@ -118,18 +122,20 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <h3 class="h5">Design</h3>
           <div class="card p-3 mx-3 d-flex align-items-center text-center">
-            <img src="images/design.png" class="mb-2 service-img">
-            <p>We create modern UI/UX and brand identities.<br>Our designs blend creativity with user-focused experience.</p>
+            <img src="images/design.png" class="mb-4 service-img">
+            <p>We create modern UI/UX and brand identities.<br>Our designs blend creativity with user-focused
+              experience.</p>
             <a class="btn btn-learn mt-auto with-loader" href="./design.html">Learn more</a>
           </div>
-        </div>
+        </div> 
 
         <!-- Marketing -->
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <h3 class="h5">Marketing</h3>
           <div class="card p-3 mx-3 d-flex align-items-center text-center">
-            <img src="images/marketing.png" class="mb-2 service-img">
-            <p>We offer digital marketing, SEO, and social media campaigns.<br>Our strategies boost visibility and drive customer growth.</p>
+            <img src="images/marketing.png" class="mb-4 service-img">
+            <p>We offer digital marketing, SEO, and social media campaigns.<br>Our strategies boost visibility and drive
+              customer growth.</p>
             <a class="btn btn-learn mt-auto with-loader" href="./market.html">Learn more</a>
           </div>
         </div>
@@ -138,8 +144,9 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <h3 class="h5">Finance</h3>
           <div class="card p-3 mx-3 d-flex align-items-center text-center">
-            <img src="images/finance.png" class="mb-2 service-img">
-            <p>We provide IT-enabled financial planning and analytics.<br>Our tools help businesses manage resources smarter.</p>
+            <img src="images/finance.png" class="mb-4 service-img">
+            <p>We provide IT-enabled financial planning and analytics.<br>Our tools help businesses manage resources
+              smarter.</p>
             <a class="btn btn-learn mt-auto with-loader" href="./finance.html">Learn more</a>
           </div>
         </div>
@@ -161,7 +168,7 @@
 
   <!-- ===================== Scripts ===================== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -246,4 +253,5 @@
     });
   </script>
 </body>
+
 </html>

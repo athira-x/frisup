@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services - Frisup</title>
 
+  <!--frisup(logo in browser tab)-->
+  <link rel="icon" type="png" href="images/rocket.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -108,7 +109,15 @@
         </div>
 
         <p class="mt-5 ms-5">
-          At Frisup IT Solutions, our finance services focus on helping businesses manage resources efficiently through technology. We provide IT-enabled financial planning tools that simplify complex processes. Our solutions support budgeting, forecasting, and cash flow management with accuracy. We also assist in building secure accounting systems that reduce manual errors. Data analytics plays a key role in our approach, offering insights for smarter financial decisions. We integrate software that tracks expenses, revenue, and overall performance in real time. Security is always a priority, with measures to protect sensitive financial data. Businesses can also benefit from automated reporting, saving time and improving transparency. Our finance services are designed to adapt to both startups and growing enterprises. With Frisup’s expertise, companies can gain financial clarity and make confident, growth-oriented choices.
+          At Frisup IT Solutions, our finance services focus on helping businesses manage resources efficiently through
+          technology. We provide IT-enabled financial planning tools that simplify complex processes. Our solutions
+          support budgeting, forecasting, and cash flow management with accuracy. We also assist in building secure
+          accounting systems that reduce manual errors. Data analytics plays a key role in our approach, offering
+          insights for smarter financial decisions. We integrate software that tracks expenses, revenue, and overall
+          performance in real time. Security is always a priority, with measures to protect sensitive financial data.
+          Businesses can also benefit from automated reporting, saving time and improving transparency. Our finance
+          services are designed to adapt to both startups and growing enterprises. With Frisup’s expertise, companies
+          can gain financial clarity and make confident, growth-oriented choices.
         </p>
       </div>
     </div>
@@ -215,9 +224,9 @@
   </div>
 
   <!-- ==================== JS ==================== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script type="module">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -303,54 +312,54 @@
       document.body.classList.remove('menu-open');
     });
 
-        const track = document.getElementById('carouselTrack');
-        const indicators = document.querySelectorAll('.line-indicators .line');
-        const cardWidth = 266;
-        let currentIndex = 0;
-        let isAnimating = false;
+    const track = document.getElementById('carouselTrack');
+    const indicators = document.querySelectorAll('.line-indicators .line');
+    const cardWidth = 266;
+    let currentIndex = 0;
+    let isAnimating = false;
 
-        function updateIndicators(index) {
-            indicators.forEach((line, i) => {
-                line.classList.toggle('active', i === index);
-            });
-        }
+    function updateIndicators(index) {
+      indicators.forEach((line, i) => {
+        line.classList.toggle('active', i === index);
+      });
+    }
 
-        function scrollCarousel() {
-            if (isAnimating) return;
-            isAnimating = true;
+    function scrollCarousel() {
+      if (isAnimating) return;
+      isAnimating = true;
 
-            // Clone first card and append it to the end
-            const firstCard = track.firstElementChild;
-            const clone = firstCard.cloneNode(true);
-            track.appendChild(clone);
+      // Clone first card and append it to the end
+      const firstCard = track.firstElementChild;
+      const clone = firstCard.cloneNode(true);
+      track.appendChild(clone);
 
-            // Animate scroll left
-            track.style.transition = 'transform 0.5s ease';
-            track.style.transform = `translateX(-${cardWidth}px)`;
+      // Animate scroll left
+      track.style.transition = 'transform 0.5s ease';
+      track.style.transform = `translateX(-${cardWidth}px)`;
 
-            setTimeout(() => {
-                // Remove the original first card
-                track.removeChild(firstCard);
+      setTimeout(() => {
+        // Remove the original first card
+        track.removeChild(firstCard);
 
-                // Reset position instantly
-                track.style.transition = 'none';
-                track.style.transform = 'translateX(0)';
+        // Reset position instantly
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
 
-                // Re-enable transition
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.5s ease';
-                    isAnimating = false;
-                }, 50);
+        // Re-enable transition
+        setTimeout(() => {
+          track.style.transition = 'transform 0.5s ease';
+          isAnimating = false;
+        }, 50);
 
-                // Update indicator
-                currentIndex = (currentIndex + 1) % indicators.length;
-                updateIndicators(currentIndex);
-            }, 500); // match transition duration
-        }
+        // Update indicator
+        currentIndex = (currentIndex + 1) % indicators.length;
+        updateIndicators(currentIndex);
+      }, 500); // match transition duration
+    }
 
-        updateIndicators(currentIndex); // initialize
-        setInterval(scrollCarousel, 3000);
-    </script>
+    updateIndicators(currentIndex); // initialize
+    setInterval(scrollCarousel, 3000);
+  </script>
 
 </body>
 

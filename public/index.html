@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - Frisup</title>
 
+  <!--frisup(logo in browser tab)-->
+  <link rel="icon" type="png" href="images/rocket.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,7 +120,7 @@
           </p>
 
           <!-- Hero Buttons -->
-          <div class="d-flex flex-column flex-sm-row gap-3 mt-3">
+          <div class="d-flex flex-column flex-sm-row gap-3 mt-3 mb-5">
             <a href="learn_more.html" class="btn btn-main with-loader">Learn more</a>
             <a href="contact.html" class="btn btn-outline-main with-loader">Get in touch</a>
           </div>
@@ -133,7 +136,7 @@
 
   <!-- ================= BOOTSTRAP + FIREBASE ================= -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
