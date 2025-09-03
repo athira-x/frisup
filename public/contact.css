@@ -1,4 +1,4 @@
-/* Base */
+/* ================= BASE ================= */
 html,
 body {
     font-family: 'Poppins', sans-serif;
@@ -10,14 +10,37 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgba(51, 51, 51, 1);
+    padding-top: 50px;
+}
 
-/* Logo */
+
+
+.p1 {
+    font-family: 'Inter', sans-serif;
+    /* ensure quotes */
+    font-weight: 400;
+    /* 400 → Regular */
+    font-style: normal;
+    /* NOT 'Regular' */
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: rgba(51, 51, 51, 1);
+    /* dark grey */
+}
+
+/* ================= LOGO ================= */
 .logo-img {
     width: 171px;
     height: 121px;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 .navbar {
     background: transparent;
 }
@@ -71,7 +94,7 @@ body {
     margin-left: auto;
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
 .btn-signup {
     border: 1px solid #05847D;
     color: #05847D;
@@ -88,35 +111,35 @@ body {
     color: #fff;
 }
 
+.btn-submit {
+    background: #05847D;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 13px;
+}
+
+.btn-submit:hover {
+    border: 1px solid #05847D;
+    color: #05847D;
+}
+
+.btn-send {
+    background: #fff;
+    border-radius: 50%;
+    color: #05847D;
+    margin-left: 6px;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+
+/* ================= CONTACT SECTION ================= */
 .contact-section {
     background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%) !important;
     min-height: 600px;
     text-align: center;
     padding: 10px 0;
-}
-
-h1 {
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  color: rgba(51, 51, 51, 1);
-  padding-top: 50px;
-}
-
-
-
-.p1 {
-    font-family: 'Inter', sans-serif;
-    /* ensure quotes */
-    font-weight: 400;
-    /* 400 → Regular */
-    font-style: normal;
-    /* NOT 'Regular' */
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: rgba(51, 51, 51, 1);
-    /* dark grey */
 }
 
 .custom-input {
@@ -137,40 +160,14 @@ h1 {
     /* default opacity remove */
 }
 
-
-
-.btn-view {
-    background: #05847D;
-    color: #fff;
-    border-radius: 20px;
-    padding: 8px 20px;
-    font-size: 13px;
-}
-
-.btn-submit {
-    background: #05847D;
-    color: #fff;
-    border-radius: 20px;
-    padding: 8px 20px;
-    font-size: 13px;
-}
-
-.btn-send {
-    background: #fff;
-    border-radius: 50%;
-    color: #05847D;
-    margin-left: 6px;
-    padding: 6px 8px;
-    font-size: 13px;
-}
-
 .contact-section img {
     max-width: 400px;
     margin-bottom: 15px;
 }
 
 
-/* Footer */
+
+/* ================= FOOTER ================= */
 .footer-section {
     background: #05847D;
     color: #fff;
@@ -186,6 +183,16 @@ h1 {
     font-size: 14px;
 }
 
+.footer-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+/* ================= SOCIAL MEDIA LINKS ================= */
 .social-icons i {
     font-size: 18px;
     color: #fff;
@@ -210,6 +217,7 @@ h1 {
 }
 
 
+/* ================= PROFILE STYLING ================= */
 .profile-circle {
     width: 25px;
     height: 25px;
@@ -232,7 +240,7 @@ h1 {
     margin-left: 100px;
 }
 
-/* Mobile Profile Styling */
+/* ================= MOBILE PROFILE STYLING ================= */
 .mobile-profile {
     z-index: 1050;
     /* Above navbar */
@@ -256,15 +264,8 @@ h1 {
     font-weight: 500;
 }
 
-.footer-link {
-    color: inherit;
-    text-decoration: none;
-}
-
-.footer-link:hover {
-    color: #fff;
-}
-
+/* ================= MEDIA QUERIES ================= */
+/*TABLET VIEW*/
 
 @media (max-width: 991px) {
 
@@ -320,6 +321,67 @@ h1 {
 
     .contact-section img {
         max-width: 300px;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100%;
+        background-color: rgba(5, 132, 125, 0.95);
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+        z-index: 9999;
+    }
+
+    /* Show menu when collapsed */
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+
+    /* Close button inside menu */
+    .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    /* Blur background when menu open */
+    body.menu-open .hero,
+    body.menu-open main,
+    body.menu-open footer {
+        filter: blur(6px);
+        transition: filter 0.3s ease;
+    }
+
+    /* Mobile nav links color & spacing */
+    .navbar-nav .nav-link {
+        color: #fff !important;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    /* Mobile logout button */
+    .mobile-logout {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .mobile-logout .btn {
+        background-color: #E2F3FB;
+        color: rgb(243, 10, 10) !important;
+        font-weight: 600;
+        font-size: 18px;
     }
 }
 
@@ -399,80 +461,6 @@ h1 {
     .social-icons i {
         font-size: 16px;
     }
-}
-
-/* ---------------------------- */
-/* Mobile & Tablet Navbar Only  */
-/* ---------------------------- */
-
-/* Tablets (≤ 991px) */
-@media (max-width: 991px) {
-
-    /* Overlay menu */
-    .navbar-collapse {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 75%;
-        height: 100%;
-        background-color: rgba(5, 132, 125, 0.95);
-        padding: 20px;
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(-100%);
-        z-index: 9999;
-    }
-
-    /* Show menu when collapsed */
-    .navbar-collapse.show {
-        transform: translateX(0);
-    }
-
-    /* Close button inside menu */
-    .close-menu {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 28px;
-        color: #fff;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 10000;
-    }
-
-    /* Blur background when menu open */
-    body.menu-open .hero,
-    body.menu-open main,
-    body.menu-open footer {
-        filter: blur(6px);
-        transition: filter 0.3s ease;
-    }
-
-    /* Mobile nav links color & spacing */
-    .navbar-nav .nav-link {
-        color: #fff !important;
-        font-size: 18px;
-        margin: 10px 0;
-    }
-
-    /* Mobile logout button */
-    .mobile-logout {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-    }
-
-    .mobile-logout .btn {
-        background-color: #E2F3FB;
-        color: rgb(243, 10, 10) !important;
-        font-weight: 600;
-        font-size: 18px;
-    }
-}
-
-/* Mobiles (≤ 576px) */
-@media (max-width: 576px) {
 
     .h21 {
         font-family: sans-serif;
@@ -553,10 +541,6 @@ h1 {
     body {
         overflow-x: hidden;
     }
-}
-
-/* Mobiles (≤ 576px) */
-@media (max-width: 576px) {
 
     /* Navbar adjustments */
     .logo-img {

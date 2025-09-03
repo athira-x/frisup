@@ -1,9 +1,10 @@
+/* ================= BASE ================= */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to right, #E2F3FB, #F4F5FF);
 }
 
-/* Accent Color */
+/*Accent Color*/
 .text-accent {
   color: #2196F3;
 }
@@ -16,9 +17,10 @@ body {
   font-size: 14px;
 }
 
+/* ================= BUTTONS ================= */
 /* Sign Up Button */
 .btn-signup {
-  height:32px;
+  height: 32px;
   width: 75px;
   background-color: #009688;
   color: #fff;
@@ -67,7 +69,7 @@ body {
 .custom-row {
   width: 1123px;
   height: 767px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .heading {
@@ -77,11 +79,13 @@ body {
 }
 
 .heading .bold {
-  font-weight: 800;   /* Bold */
+  font-weight: 800;
+  /* Bold */
 }
 
 .heading .light {
-  font-weight: 100;   /* Light */
+  font-weight: 100;
+  /* Light */
 }
 
 .heading .accent {
@@ -102,7 +106,7 @@ label {
   margin-bottom: 0.7rem;
 }
 
-.copy{
+.copy {
   color: #6e6e6e;
   margin-top: 80px;
   font-size: 12px;
@@ -114,11 +118,14 @@ label {
   border-color: #00796b;
 }
 
+/* ================= MEDIA QUERIES ================= */
+
 /* --------- Tablet (768px to 1023px) --------- */
 @media (max-width: 1023px) {
 
-    .container-fluid {
-    padding: 20px 10px; /* top-bottom space, reduce left-right space */
+  .container-fluid {
+    padding: 20px 10px;
+    /* top-bottom space, reduce left-right space */
   }
 
   .custom-row {
@@ -145,13 +152,13 @@ label {
     max-width: 75%;
   }
 
-    .copy {
+  .copy {
     margin-top: 30px;
     font-size: 11px;
     text-align: center;
   }
 
-    #signupForm .row .col {
+  #signupForm .row .col {
     margin-bottom: 1rem;
   }
 
@@ -210,7 +217,7 @@ label {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  
+
 
   label {
     font-size: 12px;

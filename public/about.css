@@ -1,3 +1,4 @@
+/* ================= HIDDEN CONTENT================= */
 #hiddenContent {
     display: none;
 }
@@ -6,6 +7,7 @@
     display: block;
 }
 
+/* ================= BASE ================= */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(90deg, #E2F3FB 10%, #F4F5FF 100%) !important;
@@ -17,12 +19,12 @@ body {
 }
 
 h1 {
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  color: rgba(51, 51, 51, 1);
-  padding-top: 50px;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgba(51, 51, 51, 1);
+    padding-top: 50px;
 }
 
 
@@ -32,21 +34,13 @@ h1 {
     font-style: normal;
     font-size: 16px;
     color: rgba(51, 51, 51, 1);
-}
-
-.h2 {
-    font-family: sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    color: rgba(51, 51, 51, 1);
     padding-top: 10px;
 }
 
 .h3 {
     font-family: sans-serif;
     font-weight: 600;
-    font-style:Bold;
+    font-style: Bold;
     font-size: 24px;
     color: rgba(5, 132, 125, 0.65);
 
@@ -80,13 +74,13 @@ h5 {
 
 }
 
-
-
+/* ================= LOGO ================= */
 .logo-img {
     width: 171px;
     height: 121px;
 }
 
+/* ================= NAVBAR ================= */
 .navbar {
     background: transparent;
 }
@@ -140,7 +134,7 @@ h5 {
     margin-left: auto;
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
 .btn-signup {
     border: 1px solid #05847D;
     color: #05847D;
@@ -157,12 +151,30 @@ h5 {
     color: #fff;
 }
 
+.btn-main {
+    background: #05847D;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    padding: 6px 22px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    margin-top: 20px;
+
+}
+
+.btn-main:hover {
+    background: #eef7f9;
+    color: #05847D;
+    border: 1px solid #05847D;
+}
+
+/* ================= CAROUSEL  ================= */
 
 .carousel-container {
     position: relative;
     width: 900px;
     height: 380px;
-    /* enough space for dots */
     margin: 0 auto;
 }
 
@@ -211,7 +223,58 @@ h5 {
     color: #555;
 }
 
-/* Positions */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.carousel-container .dots {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+/* ================= CAROUSEL BUTTON ================= */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #007b7b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: #005f5f;
+}
+
+.carousel-btn.left {
+    left: 300px;
+}
+
+.carousel-btn.right {
+    right: 200px;
+}
+
+/* ================= POSITIONS ================= */
 .pos0 {
     transform: translateX(calc(-130px * 2)) scale(0.85);
     opacity: 0.6;
@@ -242,37 +305,8 @@ h5 {
     z-index: 1;
 }
 
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #007b7b;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s;
-}
 
-.carousel-btn:hover {
-    background: #005f5f;
-}
-
-.carousel-btn.left {
-    left: 10px;
-}
-
-.carousel-btn.right {
-    right: 10px;
-}
-
+/* ================= DOTS ================= */
 .dots {
     text-align: center;
     margin-top: 10px;
@@ -292,135 +326,54 @@ h5 {
     background-color: rgba(5, 132, 125, 1);
 }
 
-.btn-main {
-    background: #05847D;
-    color: rgba(255, 255, 255, 1);
-    border-radius: 30px;
-    padding: 6px 22px;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    margin-top: 20px;
 
-}
-
-.btn-main:hover {
-    background: #eef7f9;
-    color: #05847D;
-    border: 1px solid #05847D;
-}
-
-.card {
-    width: 220px;
-    height: 258px;
-    background: #d6eff5;
-    border-radius: 16px;
-    border: 5px solid #F4F5FF;
-    border-bottom: 50px solid #eef7f9;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    margin-bottom: 12px;
-}
-
-.card .name {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #222;
-}
-
-.card .role {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-    text-align: center;
-}
-
-.carousel {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: max-content;
-    margin: 0 auto;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    border: 0;
-    cursor: pointer;
-}
-
-.carousel-btn.left {
-    left: 300px;
-}
-
-.carousel-btn.right {
-    right: 200px;
-}
-
-.carousel-container .dots {
-    display: inline-block;
-    margin-top: 12px;
-}
-
+/* ================= PROFILE STYLING ================= */
 .profile-circle {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #05847eab; /* green shade, change if needed */
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 11px;
-  margin-top: 50px;
-  margin-left: 100px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #05847eab;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 11px;
+    margin-top: 50px;
+    margin-left: 100px;
 }
+
 .profile-name {
-  font-size: 12px;
-  font-weight: 500;
-  margin-left: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 100px;
 }
 
-/* Mobile Profile Styling */
+/* ================= MOBILE PROFILE STYLING ================= */
 .mobile-profile {
-  z-index: 1050; /* Above navbar */
+    z-index: 1050;
 }
+
 .mobile-profile .profile-circle {
-  background: #05847D; /* green */
-  color: white;
-  font-weight: bold;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: #05847D;
+    color: white;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .mobile-profile .profile-name {
-  font-size: 14px;
-  font-weight: 500;
+    font-size: 14px;
+    font-weight: 500;
 }
 
+/* ================= MEDIA QUERIES ================= */
 
+/* Tablets (≤ 992px) */
 @media (max-width: 992px) {
     .carousel-container {
         width: 100%;
@@ -448,45 +401,6 @@ h5 {
     .carousel-btn.right {
         right: 20px;
     }
-}
-
-@media (max-width: 576px) {
-
-    .carousel-card,
-    .card {
-        width: 150px;
-        height: 200px;
-    }
-
-    h1 {
-        font-size: 18px;
-    }
-
-    h4 {
-        font-size: 32px;
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-
-    .carousel-btn.left {
-        left: 10px;
-    }
-
-    .carousel-btn.right {
-        right: 10px;
-    }
-}
-
-/* ---------------------------- */
-/* Mobile & Tablet Navbar Only  */
-/* ---------------------------- */
-
-/* Tablets (≤ 991px) */
-@media (max-width: 991px) {
 
     /* Overlay menu */
     .navbar-collapse {
@@ -550,16 +464,44 @@ h5 {
         font-size: 18px;
     }
 
-      /* Navbar adjustments */
-  .logo-img {
-    width: 120px;
-    height: auto;
-    margin-left: 10px;
-  }
+    /* Navbar adjustments */
+    .logo-img {
+        width: 120px;
+        height: auto;
+        margin-left: 10px;
+    }
 }
 
 /* Mobiles (≤ 576px) */
 @media (max-width: 576px) {
+
+    .carousel-card,
+    .card {
+        width: 150px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-btn.left {
+        left: 10px;
+    }
+
+    .carousel-btn.right {
+        right: 10px;
+    }
 
     /* Navbar adjustments */
     .navbar {
@@ -569,13 +511,13 @@ h5 {
     }
 
     .h13 {
-    font-family: 'Inter', sans-serif;
-    text-align: justify !important;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    color: rgba(51, 51, 51, 1);
-    padding: 20px;
+        font-family: 'Inter', sans-serif;
+        text-align: justify !important;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        color: rgba(51, 51, 51, 1);
+        padding: 20px;
     }
 
     .navbar .navbar-toggler {
@@ -616,74 +558,73 @@ h5 {
     }
 
     /* Mobile profile circle */
-      .profile-user{
-    margin-top: -25px;
-    margin-right: 20px;
-  }
+    .profile-user {
+        margin-top: -25px;
+        margin-right: 20px;
+    }
 
-  #profile-circle {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-    background-color: #05847D;
-  }
+    #profile-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        background-color: #05847D;
+    }
 
     .login-text {
-    color: #05847D;
-    font-weight: 500;
-    text-decoration: none;
-    margin-top: 41px;
-    margin-right: 18px !important;
-  }
+        color: #05847D;
+        font-weight: 500;
+        text-decoration: none;
+        margin-top: 41px;
+        margin-right: 18px !important;
+    }
 
     /* Prevent horizontal scroll on mobile */
     body {
         overflow-x: hidden;
     }
-}
 
-/* Mobile view (≤576px) */
-@media (max-width: 576px) {
-  #hiddenContent .row {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 35px;
-    margin-left: -55px !important;
-  }
+    #hiddenContent .row {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 35px;
+        margin-left: -55px !important;
+    }
 
     #hiddenContent .col-md-5 {
-    order: -1; /* force number block to top */
-  }
+        order: -1;
+        /* force number block to top */
+    }
 
-  #hiddenContent h4 {
-    color: #05847D;
-    font-size: 32px; /* smaller for mobile */
-    margin-bottom: 5px;
-    padding: 0 190px !important;
-  }
+    #hiddenContent h4 {
+        color: #05847D;
+        font-size: 32px;
+        /* smaller for mobile */
+        margin-bottom: 5px;
+        padding: 0 190px !important;
+    }
 
-  #hiddenContent h5 {
-    font-size: 14px;
-    margin-bottom: 15px;
-    color: #555;
-    margin-left: 50px;
-  }
+    #hiddenContent h5 {
+        font-size: 14px;
+        margin-bottom: 15px;
+        color: #555;
+        margin-left: 50px;
+    }
 
-  #hiddenContent p {
-    margin-top: 10px;
-    text-align: justify;
-    font-size: 14px;
-    line-height: 1.5;
-  }
+    #hiddenContent p {
+        margin-top: 10px;
+        text-align: justify;
+        font-size: 14px;
+        line-height: 1.5;
+    }
 
-  #hiddenContent h1 {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 15px;
-  }
+    #hiddenContent h1 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
 
     #hiddenContent h1.text-muted {
-    display: none !important;
-  }
+        display: none !important;
+    }
 }

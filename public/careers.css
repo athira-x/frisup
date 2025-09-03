@@ -1,10 +1,10 @@
-
+/* ================= BASE ================= */
 html,
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-} 
+}
 
 * {
   box-sizing: border-box;
@@ -17,13 +17,60 @@ body {
   margin: 0;
 }
 
-/* Logo */
+p {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: rgba(51, 51, 51, 1);
+
+}
+
+h2 {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: rgba(51, 51, 51, 1);
+  padding-top: 10px;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  color: rgba(51, 51, 51, 1);
+  padding-top: 50px;
+}
+
+
+h3 {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-style: Bold;
+  font-size: 24px;
+  color: rgba(5, 132, 125, 0.67);
+  margin-bottom: 10px;
+  padding-top: 50px;
+
+}
+
+h4 {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-style: Bold;
+  font-size: 24px;
+  color: rgba(5, 132, 125, 0.67);
+}
+
+/* ================= LOGO ================= */
 .logo-img {
   width: 171px;
   height: 121px;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 .navbar {
   background: transparent;
 }
@@ -77,7 +124,7 @@ body {
   margin-left: auto;
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
 .btn-signup {
   border: 1px solid #05847D;
   color: #05847D;
@@ -94,30 +141,27 @@ body {
   color: #fff;
 }
 
-
-.card {
-  background: rgba(255, 255, 255, 1);
-  border-radius: 12px;
+.apply-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(5, 132, 125, 1);
+  color: white;
   border: none;
-  width: 254px;
-  height: 321px;
-  box-shadow: 0 4px 15px rgba(85, 85, 85, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+.apply-btn:hover {
+  border: 1px solid #05847D;
+  color: #05847D;
+  background-color: white;
 }
 
-.card p {
-  margin-top: auto;
-  font-size: 13px;
-  color: #555555;
-  margin-bottom: 20px;
-}
 
+/* ================= UNDERLINE ================= */
 .underline {
   width: 124px;
   height: 1px;
@@ -135,53 +179,7 @@ body {
   margin-bottom: 25px;
 }
 
-p {
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  color: rgba(51, 51, 51, 1);
-
-}
-
-h2 {
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  color: rgba(51, 51, 51, 1);
-  padding-top: 10px;
-}
-
-h1 {
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  color: rgba(51, 51, 51, 1);
-  padding-top: 50px;
-}
-
-
-h3 {
-  font-family: Inter;
-  font-weight: 600;
-  font-style: Semi Bold;
-  font-size: 24px;
-  color: rgba(5, 132, 125, 0.67);
-  margin-bottom: 10px;
-  padding-top: 50px;
-
-}
-
-h4 {
-  font-family: sans-serif;
-  font-weight: 600;
-  font-style: Bold;
-  font-size: 24px;
-  color: rgba(5, 132, 125, 0.67);
-}
-
+/* ================= CARDS STYLING ================= */
 .outer-card {
   position: relative;
   width: 220px;
@@ -263,6 +261,7 @@ h4 {
   cursor: pointer;
 }
 
+/* ================= DOTS ================= */
 .dots {
   position: absolute;
   bottom: 8px;
@@ -283,30 +282,13 @@ h4 {
   background-color: rgba(5, 132, 125, 1);
 }
 
-.apply-btn {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background-color: rgba(5, 132, 125, 1);
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.apply-btn:hover {
-  border: 1px solid #05847D;
-  color: #05847D;
-  background-color: white;
-}
-
+/* ================= PROFILE STYLE ================= */
 .profile-circle {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #05847eab; /* green shade, change if needed */
+  background-color: #05847eab;
+  /* green shade, change if needed */
   color: white;
   display: flex;
   align-items: center;
@@ -316,18 +298,22 @@ h4 {
   margin-top: 50px;
   margin-left: 100px;
 }
+
 .profile-name {
   font-size: 12px;
   font-weight: 500;
   margin-left: 100px;
 }
 
-/* Mobile Profile Styling */
+/* ================= MOBILE PROFILE STYLE ================= */
 .mobile-profile {
-  z-index: 1050; /* Above navbar */
+  z-index: 1050;
+  /* Above navbar */
 }
+
 .mobile-profile .profile-circle {
-  background: #05847D; /* green */
+  background: #05847D;
+  /* green */
   color: white;
   font-weight: bold;
   width: 32px;
@@ -337,17 +323,20 @@ h4 {
   align-items: center;
   justify-content: center;
 }
+
 .mobile-profile .profile-name {
   font-size: 14px;
   font-weight: 500;
 }
 
+/* ================= ACTIVE PAGE IN CARD ================= */
 .page {
   display: none;
   opacity: 0;
   transform: translateX(20px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
 .page.active {
   display: flex;
   opacity: 1;
@@ -355,7 +344,7 @@ h4 {
 }
 
 
-/* Responsive Adjustments */
+/* ================= MEDIA QUERIES ================= */
 
 /* Tablets (≤ 991px) */
 @media (max-width: 991px) {
@@ -413,7 +402,72 @@ h4 {
   .title-wrapper {
     font-size: 14px;
   }
+
+  /* TABLETS NAVBAR (≤ 991px) */
+
+  /* Overlay menu */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background-color: rgba(5, 132, 125, 0.95);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 9999;
+  }
+
+  /* Show menu when collapsed */
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+
+  /* Close button inside menu */
+  .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* Blur background when menu open */
+  body.menu-open .hero,
+  body.menu-open main,
+  body.menu-open footer {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+
+  /* Mobile nav links color & spacing */
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* Mobile logout button */
+  .mobile-logout {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .mobile-logout .btn {
+    background-color: #E2F3FB;
+    color: rgb(243, 10, 10) !important;
+    font-weight: 600;
+    font-size: 18px;
+  }
 }
+
 
 /* Mobiles (≤ 576px) */
 @media (max-width: 576px) {
@@ -479,79 +533,7 @@ h4 {
     font-size: 11px;
     padding: 4px 10px;
   }
-}
 
-/* ---------------------------- */
-/* Mobile & Tablet Navbar Only  */
-/* ---------------------------- */
-
-/* Tablets (≤ 991px) */
-@media (max-width: 991px) {
-  /* Overlay menu */
-  .navbar-collapse {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 75%;
-    height: 100%;
-    background-color: rgba(5, 132, 125, 0.95);
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-    z-index: 9999;
-  }
-
-  /* Show menu when collapsed */
-  .navbar-collapse.show {
-    transform: translateX(0);
-  }
-
-  /* Close button inside menu */
-  .close-menu {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 28px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10000;
-  }
-
-  /* Blur background when menu open */
-  body.menu-open .hero,
-  body.menu-open main,
-  body.menu-open footer {
-    filter: blur(6px);
-    transition: filter 0.3s ease;
-  }
-
-  /* Mobile nav links color & spacing */
-  .navbar-nav .nav-link {
-    color: #fff !important;
-    font-size: 18px;
-    margin: 10px 0;
-  }
-
-  /* Mobile logout button */
-  .mobile-logout {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-  }
-
-  .mobile-logout .btn {
-    background-color: #E2F3FB;
-    color: rgb(243, 10, 10) !important;
-    font-weight: 600;
-    font-size: 18px;
-  }
-}
-
-/* Mobiles (≤ 576px) */
-@media (max-width: 576px) {
   /* Navbar adjustments */
   .navbar {
     display: flex;
@@ -561,9 +543,11 @@ h4 {
 
   .navbar .navbar-toggler {
     margin-left: 10px;
-    order: -1; /* move toggler to left */
+    order: -1;
+    /* move toggler to left */
     border: none;
-    padding: 2px 6px; /* smaller toggler */
+    padding: 2px 6px;
+    /* smaller toggler */
   }
 
   /* Custom toggler lines */
@@ -595,7 +579,7 @@ h4 {
   }
 
   /* Mobile profile circle */
-    .profile-user{
+  .profile-user {
     margin-top: -25px;
     margin-right: 20px;
   }

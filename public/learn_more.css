@@ -83,7 +83,7 @@ body {
 }
 
 .section-text {
-  font-family:'Inter'sans-serif;
+  font-family: 'Inter' sans-serif;
   text-align: justify;
   font-weight: 400;
   font-style: normal;
@@ -118,6 +118,7 @@ body {
 .mobile-profile {
   z-index: 1050;
 }
+
 .mobile-profile .profile-circle {
   background: #05847D;
   color: white;
@@ -129,6 +130,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .mobile-profile .profile-name {
   font-size: 14px;
   font-weight: 500;
@@ -150,9 +152,11 @@ body {
     transform: translateX(-100%);
     z-index: 9999;
   }
+
   .navbar-collapse.show {
     transform: translateX(0);
   }
+
   .close-menu {
     position: absolute;
     top: 15px;
@@ -164,22 +168,26 @@ body {
     cursor: pointer;
     z-index: 10000;
   }
+
   body.menu-open main,
   body.menu-open footer {
     filter: blur(6px);
     transition: filter 0.3s ease;
   }
+
   .navbar-nav .nav-link {
     color: #fff !important;
     font-size: 18px;
     margin: 10px 0;
   }
+
   .mobile-logout {
     position: absolute;
     bottom: 20px;
     left: 20px;
     right: 20px;
   }
+
   .mobile-logout .btn {
     background-color: #E2F3FB;
     color: rgb(243, 10, 10) !important;
@@ -195,24 +203,29 @@ body {
     height: auto;
     margin-left: 10px;
   }
+
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .section-title {
     padding-bottom: 20px;
   }
+
   .section-text {
     font-family: 'Inter', sans-serif;
     width: 300px;
   }
+
   .navbar .navbar-toggler {
     margin-left: 10px;
     order: -1;
     border: none;
     padding: 2px 6px;
   }
+
   .navbar-toggler-icon {
     background-image: none;
     width: 20px;
@@ -221,6 +234,7 @@ body {
     display: block;
     position: relative;
   }
+
   .navbar-toggler-icon::before,
   .navbar-toggler-icon::after {
     content: "";
@@ -230,22 +244,27 @@ body {
     background-color: #05847D;
     left: 0;
   }
+
   .navbar-toggler-icon::before {
     top: -7px;
   }
+
   .navbar-toggler-icon::after {
     top: 7px;
   }
+
   .profile-user {
     margin-top: -25px;
     margin-right: 20px;
   }
+
   #profile-circle {
     width: 32px;
     height: 32px;
     font-size: 14px;
     background-color: #05847D;
   }
+
   .login-text {
     color: #05847D;
     font-weight: 500;
@@ -253,6 +272,7 @@ body {
     margin-top: 41px;
     margin-right: 18px !important;
   }
+
   body {
     overflow-x: hidden;
   }

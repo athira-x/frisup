@@ -1,3 +1,4 @@
+/* ================= BASE ================= */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to right, #E2F3FB, #F4F5FF);
@@ -8,23 +9,24 @@ body {
   color: #2196F3;
 }
 
-/* Inputs */
+/* ================= INPUTS ================= */
 .custom-input {
   border-radius: 6px;
   border: 1px solid #ccc;
   padding: 10px 12px;
   font-size: 14px;
 }
+
 .custom-input:focus {
   border-color: #00796b;
-  box-shadow: 0 0 5px rgba(0,121,107,0.5);
-  outline: none; /* optional to remove default focus outline */
+  box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
+  outline: none;
+  /* optional to remove default focus outline */
 }
 
-
-/* Sign Up Button */
+/* ================= BUTTONS ================= */
 .btn-signup {
-  height:32px;
+  height: 32px;
   width: 75px;
   background-color: #009688;
   color: #fff;
@@ -40,11 +42,10 @@ body {
   color: #fff;
 }
 
-
 .custom-row {
   width: 1123px;
   height: 767px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .heading {
@@ -54,11 +55,13 @@ body {
 }
 
 .heading .bold {
-  font-weight: 800;   /* Bold */
+  font-weight: 800;
+  /* Bold */
 }
 
 .heading .light {
-  font-weight: 100;   /* Light */
+  font-weight: 100;
+  /* Light */
 }
 
 .heading .accent {
@@ -79,7 +82,7 @@ label {
   margin-bottom: 0.7rem;
 }
 
-.copy{
+.copy {
   color: #6e6e6e;
   margin-top: 80px;
   font-size: 12px;
@@ -90,7 +93,7 @@ label {
   border-color: #00796b;
 }
 
-/* --------- Tablet (768px to 1023px) --------- */
+/* ================= MEDIA QUERIES ================= */
 @media (max-width: 1023px) {
   .custom-row {
     width: 95%;
@@ -109,7 +112,8 @@ label {
   }
 
   .illustration img {
-    margin: 20px auto 0 auto; /* center */
+    margin: 20px auto 0 auto;
+    /* center */
     display: block;
     max-width: 70%;
   }
@@ -160,7 +164,8 @@ label {
   .illustration img {
     margin: 20px auto;
     display: block;
-    max-width: 60%; /* smaller on mobile */
+    max-width: 60%;
+    /* smaller on mobile */
   }
 
   .copy {
